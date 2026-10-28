@@ -1,0 +1,2065 @@
+<html lang="fa" dir="rtl"><head><script src="//www.google.com/jsapi"></script><script>window.parent.maeExportApis_();</script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr.Mahdi Radar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&amp;family=Vazirmatn:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'IRANSansX';
+            src: local('IRANSansXFaNum'), local('IRANSansX'), local('IRANSansFaNum'),
+                 local('IRANSans'), local('IRANSansWeb'), local('IRANSansDN'),
+                 url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'IRANSansX';
+            src: local('IRANSansXFaNum Medium'), local('IRANSansX Medium'), local('IRANSansFaNum Medium'),
+                 local('IRANSans Medium'), local('IRANSansWeb_Medium'), local('IRANSansDN-Medium'),
+                 url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'IRANSansX';
+            src: local('IRANSansXFaNum Bold'), local('IRANSansX Bold'), local('IRANSansX DemiBold'),
+                 local('IRANSans Bold'), local('IRANSansWeb_Bold'), local('IRANSansDN-Bold'),
+                 url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'IRANSansX';
+            src: local('IRANSansXFaNum ExtraBold'), local('IRANSansX ExtraBold'), local('IRANSansX Black'),
+                 local('IRANSans Black'), local('IRANSansWeb_Black'),
+                 url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-ExtraBold.woff2') format('woff2');
+            font-weight: 800 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --font-sans: 'IRANSansX', 'IRANSansXFaNum', 'IRANSans', 'IRANSansFaNum', 'IRANSansWeb', 'IRANSansDN', 'Vazirmatn', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            --bg-app: #060913;
+            --bg-sidebar: rgba(10, 15, 28, 0.95);
+            --bg-topbar: rgba(10, 15, 28, 0.9);
+            --bg-surface: rgba(15, 23, 42, 0.85);
+            --bg-elevated: rgba(23, 35, 62, 0.75);
+            --bg-inner: rgba(9, 14, 25, 0.75);
+
+            --border-subtle: rgba(148, 163, 184, 0.14);
+            --border-active: rgba(56, 189, 248, 0.5);
+
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #8b9bb4;
+
+            --cyan: #38bdf8;
+            --cyan-soft: rgba(56, 189, 248, 0.14);
+            --cyan-glow: rgba(56, 189, 248, 0.35);
+
+            --indigo: #818cf8;
+            --indigo-soft: rgba(129, 140, 248, 0.15);
+
+            --emerald: #34d399;
+            --emerald-soft: rgba(52, 211, 153, 0.14);
+
+            --amber: #fbbf24;
+            --amber-soft: rgba(251, 191, 36, 0.15);
+
+            --rose: #fb7185;
+            --rose-soft: rgba(251, 113, 133, 0.16);
+
+            --purple: #c084fc;
+            --purple-soft: rgba(192, 132, 252, 0.16);
+
+            --shadow-card: 0 20px 45px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        [data-theme="light"] {
+            --bg-app: #f1f5f9;
+            --bg-sidebar: rgba(255, 255, 255, 0.96);
+            --bg-topbar: rgba(255, 255, 255, 0.94);
+            --bg-surface: rgba(255, 255, 255, 0.96);
+            --bg-elevated: rgba(248, 250, 252, 0.98);
+            --bg-inner: rgba(241, 245, 249, 0.95);
+
+            --border-subtle: rgba(15, 23, 42, 0.1);
+            --border-active: rgba(2, 132, 199, 0.45);
+
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+
+            --cyan: #0284c7;
+            --cyan-soft: rgba(2, 132, 199, 0.1);
+            --cyan-glow: rgba(2, 132, 199, 0.25);
+
+            --indigo: #4f46e5;
+            --indigo-soft: rgba(79, 70, 229, 0.1);
+
+            --emerald: #059669;
+            --emerald-soft: rgba(5, 150, 105, 0.1);
+
+            --amber: #d97706;
+            --amber-soft: rgba(217, 119, 6, 0.12);
+
+            --rose: #e11d48;
+            --rose-soft: rgba(225, 29, 72, 0.1);
+
+            --purple: #7e22ce;
+            --purple-soft: rgba(126, 34, 206, 0.1);
+
+            --shadow-card: 0 16px 36px -10px rgba(15, 23, 42, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-app);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-feature-settings: "ss02" 1, "tnum" 1;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        .mono { font-family: var(--font-mono); direction: ltr; display: inline-block; }
+
+        #bgCanvas {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.65;
+        }
+
+        a { color: inherit; text-decoration: none; transition: color 0.18s ease; }
+        a:hover { color: var(--cyan); }
+
+         
+        .app-shell {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 270px 1fr;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 1060px) {
+            .app-shell { grid-template-columns: 1fr; }
+        }
+
+         
+        .app-sidebar {
+            background: var(--bg-sidebar);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-left: 1px solid var(--border-subtle);
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 18px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 1060px) {
+            .app-sidebar {
+                position: static;
+                height: auto;
+                border-left: none;
+                border-bottom: 1px solid var(--border-subtle);
+            }
+        }
+
+        .brand-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 4px 6px 14px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .brand-radar-mini {
+            position: relative;
+            width: 42px;
+            height: 42px;
+            border-radius: 13px;
+            background: radial-gradient(circle, rgba(56,189,248,0.25), rgba(15,23,42,0.95));
+            border: 1px solid var(--border-active);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 0 16px var(--cyan-glow);
+        }
+
+        .brand-radar-sweep {
+            position: absolute;
+            inset: -10px;
+            background: conic-gradient(from 0deg, transparent 240deg, rgba(56,189,248,0.7) 355deg, #34d399 360deg);
+            animation: spin360 3s linear infinite;
+        }
+
+        @keyframes spin360 { to { transform: rotate(360deg); } }
+
+        .brand-radar-dot {
+            position: relative;
+            z-index: 2;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 0 8px var(--cyan);
+        }
+
+        .brand-title { font-size: 0.98rem; font-weight: 900; }
+        .brand-sub { font-size: 0.7rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+
+         
+        .scope-switcher-box {
+            background: var(--bg-inner);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .scope-btn {
+            width: 100%;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 7px 10px;
+            border-radius: 10px;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.18s ease;
+        }
+
+        .scope-btn:hover { border-color: var(--cyan); color: var(--text-primary); }
+        .scope-btn.active {
+            background: linear-gradient(135deg, #059669, #0284c7);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(52, 211, 153, 0.3);
+        }
+
+         
+        .nav-menu { display: flex; flex-direction: column; gap: 6px; }
+
+        @media (max-width: 1060px) {
+            .nav-menu { flex-direction: row; flex-wrap: wrap; }
+        }
+
+        .nav-btn {
+            width: 100%;
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+            padding: 10px 12px;
+            border-radius: 13px;
+            font-family: var(--font-sans);
+            font-size: 0.81rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            transition: all 0.2s ease;
+            text-align: right;
+        }
+
+        @media (max-width: 1060px) {
+            .nav-btn { width: auto; flex: 1 1 auto; }
+        }
+
+        .nav-btn-left { display: flex; align-items: center; gap: 9px; }
+        .nav-btn:hover { background: var(--bg-elevated); color: var(--text-primary); transform: translateX(-3px); }
+        .nav-btn.active {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.16));
+            border-color: var(--border-active);
+            color: var(--text-primary);
+            box-shadow: 0 6px 18px -6px var(--cyan-glow);
+        }
+
+        .nav-badge {
+            padding: 2px 7px;
+            border-radius: 999px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            background: var(--bg-inner);
+            color: var(--cyan);
+        }
+
+        .sidebar-telemetry {
+            background: var(--bg-inner);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        @media (max-width: 1060px) {
+            .sidebar-telemetry { display: none; }
+        }
+
+        .telemetry-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.72rem;
+        }
+
+        .status-online-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--emerald);
+            font-weight: 800;
+            font-size: 0.72rem;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--emerald);
+            box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+            70% { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+        }
+
+         
+        .app-main { display: flex; flex-direction: column; min-width: 0; }
+
+        .app-topbar {
+            position: sticky;
+            top: 0;
+            z-index: 25;
+            background: var(--bg-topbar);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 12px 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .topbar-right, .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+         
+        .top-category-tabs {
+            display: flex;
+            gap: 6px;
+            background: var(--bg-inner);
+            padding: 4px;
+            border-radius: 14px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .cat-tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 6px 13px;
+            border-radius: 10px;
+            font-family: var(--font-sans);
+            font-size: 0.77rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cat-tab-btn:hover { color: var(--text-primary); }
+        .cat-tab-btn.active {
+            background: var(--bg-elevated);
+            color: var(--cyan);
+            border: 1px solid var(--border-active);
+            box-shadow: 0 3px 10px -3px var(--cyan-glow);
+        }
+
+        .live-clock-chip {
+            background: var(--bg-inner);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.76rem;
+            font-weight: 700;
+        }
+
+        .btn-action {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            border-radius: 12px;
+            padding: 7px 12px;
+            font-family: var(--font-sans);
+            font-size: 0.76rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+        .btn-action:hover { border-color: var(--cyan); transform: translateY(-1px); }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0284c7, #4f46e5);
+            color: #ffffff;
+            border: none;
+        }
+
+         
+        .workspace-body {
+            padding: 22px 24px 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+         
+        .tab-content-view {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+            animation: fadeInTab 0.28s ease both;
+        }
+
+        .tab-content-view.active-tab-view {
+            display: flex !important;
+        }
+
+        @keyframes fadeInTab {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+         
+        .dashboard-card {
+            background: var(--bg-surface);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-subtle);
+            border-radius: 22px;
+            box-shadow: var(--shadow-card);
+            padding: 22px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .card-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 12px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .card-head-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .card-head h2 { font-size: 1.05rem; font-weight: 800; }
+        .card-head p { font-size: 0.74rem; color: var(--text-muted); }
+
+        .pill-badge {
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .pill-cyan { background: var(--cyan-soft); color: var(--cyan); border: 1px solid rgba(56,189,248,0.35); }
+        .pill-emerald { background: var(--emerald-soft); color: var(--emerald); border: 1px solid rgba(52,211,153,0.35); }
+        .pill-amber { background: var(--amber-soft); color: var(--amber); border: 1px solid rgba(251,191,36,0.35); }
+        .pill-rose { background: var(--rose-soft); color: var(--rose); border: 1px solid rgba(251,113,133,0.35); }
+        .pill-purple { background: var(--purple-soft); color: var(--purple); border: 1px solid rgba(192,132,252,0.35); }
+
+         
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+        @media (max-width: 960px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 520px) { .kpi-grid { grid-template-columns: 1fr; } }
+
+        .kpi-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 16px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .kpi-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-2px);
+        }
+        .kpi-title { font-size: 0.73rem; color: var(--text-muted); font-weight: 700; }
+        .kpi-num { font-size: 1.55rem; font-weight: 900; margin-top: 2px; }
+        .kpi-foot { font-size: 0.7rem; color: var(--text-secondary); margin-top: 2px; }
+
+         
+        .chart-stage { position: relative; padding-top: 10px; }
+        .v-bars-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            height: 160px;
+            align-items: end;
+            padding-top: 10px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 8px;
+        }
+        .v-bar-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            gap: 4px;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 10px;
+            transition: all 0.18s ease;
+        }
+        .v-bar-col:hover, .v-bar-col.selected-col { background: rgba(56, 189, 248, 0.1); transform: translateY(-2px); }
+        .v-bar-count { font-size: 0.76rem; font-weight: 800; }
+        .v-bar-track {
+            width: 100%;
+            max-width: 36px;
+            height: 94px;
+            background: rgba(148, 163, 184, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            padding: 2px;
+        }
+        .v-bar-fill {
+            width: 100%;
+            border-radius: 6px;
+            background: linear-gradient(180deg, #38bdf8, #6366f1);
+            transition: height 0.4s ease;
+        }
+        .v-bar-fill.critical { background: linear-gradient(180deg, #fb7185, #f59e0b); }
+        .v-bar-day { font-size: 0.7rem; font-weight: 700; text-align: center; }
+
+         
+        .agenda-items { display: flex; flex-direction: column; gap: 8px; }
+        .agenda-row {
+            background: var(--bg-inner);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 10px 14px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .agenda-row:hover { border-color: var(--border-active); transform: translateX(-3px); }
+        .agenda-left { display: flex; align-items: center; gap: 11px; }
+        .time-box {
+            background: var(--cyan-soft);
+            color: var(--cyan);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 4px 9px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+        .agenda-name { font-size: 0.85rem; font-weight: 800; }
+        .agenda-meta { font-size: 0.71rem; color: var(--text-muted); margin-top: 1px; }
+
+         
+        .gantt-card {
+            background: var(--bg-inner);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .gantt-ruler {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            font-size: 0.63rem;
+            color: var(--text-muted);
+            direction: ltr;
+            border-bottom: 1px dashed var(--border-subtle);
+            padding-bottom: 3px;
+        }
+        .gantt-tracks { position: relative; display: flex; flex-direction: column; gap: 5px; direction: ltr; }
+        .gantt-row { position: relative; height: 24px; background: rgba(148, 163, 184, 0.06); border-radius: 5px; }
+        .gantt-item {
+            position: absolute;
+            top: 2px;
+            bottom: 2px;
+            border-radius: 4px;
+            font-size: 0.63rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            direction: rtl;
+            cursor: pointer;
+        }
+
+         
+        .rec-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+        @media (max-width: 880px) { .rec-grid { grid-template-columns: 1fr; } }
+
+        .rec-card {
+            background: var(--bg-inner);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+            transition: all 0.2s ease;
+        }
+        .rec-card:hover { border-color: var(--cyan); transform: translateY(-2px); }
+        .rec-card.applied { border-color: var(--emerald); background: rgba(52, 211, 153, 0.06); }
+        .rec-title { font-size: 0.88rem; font-weight: 800; }
+        .rec-body { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.6; }
+        .rec-foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px dashed var(--border-subtle);
+            padding-top: 8px;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+         
+        .heatmap-grid {
+            display: grid;
+            grid-template-columns: 80px repeat(5, 1fr);
+            gap: 5px;
+            font-size: 0.68rem;
+            align-items: center;
+        }
+        .hm-head { text-align: center; color: var(--text-muted); font-weight: 700; }
+        .hm-cell {
+            height: 24px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.64rem;
+            font-weight: 800;
+        }
+        .hm-free { background: rgba(52, 211, 153, 0.12); color: var(--emerald); border: 1px solid rgba(52, 211, 153, 0.22); }
+        .hm-busy { background: rgba(56, 189, 248, 0.22); color: var(--cyan); border: 1px solid rgba(56, 189, 248, 0.4); }
+        .hm-crit { background: rgba(251, 191, 36, 0.24); color: var(--amber); border: 1px solid rgba(251, 191, 36, 0.45); }
+        .hm-clash { background: rgba(251, 113, 133, 0.28); color: var(--rose); border: 1px solid rgba(251, 113, 133, 0.55); }
+
+         
+        .donut-row { display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 16px; }
+        @media (max-width: 500px) { .donut-row { grid-template-columns: 1fr; justify-items: center; } }
+        .compbar { height: 12px; width: 100%; background: var(--bg-inner); border-radius: 999px; overflow: hidden; display: flex; gap: 2px; padding: 2px; }
+        .compbar-seg { height: 100%; border-radius: 999px; }
+
+         
+        .archive-table { width: 100%; border-collapse: collapse; text-align: right; font-size: 0.81rem; }
+        .archive-table th { background: var(--bg-elevated); color: var(--text-muted); padding: 11px 14px; font-weight: 800; border-bottom: 1px solid var(--border-subtle); }
+        .archive-table td { padding: 10px 14px; border-bottom: 1px solid var(--border-subtle); color: var(--text-secondary); }
+        .archive-table tbody tr.today { background: var(--cyan-soft); border-right: 4px solid var(--cyan); }
+        .archive-table tbody tr.today td { color: var(--text-primary); font-weight: 800; }
+
+         
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 7, 15, 0.78);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        .modal-backdrop.open { display: flex; }
+        .modal-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-active);
+            border-radius: 20px;
+            max-width: 520px;
+            width: 100%;
+            padding: 22px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .toast-box {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            background: linear-gradient(135deg, #059669, #0284c7);
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+            z-index: 200;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all 0.25s ease;
+        }
+        .toast-box.show { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <canvas id="bgCanvas" width="1855" height="908"></canvas>
+
+    <div class="app-shell">
+
+        
+        <aside class="app-sidebar">
+            <div style="display:flex; flex-direction:column; gap:16px;">
+                <div class="brand-box">
+                    <div class="brand-radar-mini">
+                        <div class="brand-radar-sweep"></div>
+                        <div class="brand-radar-dot"></div>
+                    </div>
+                    <div>
+                        <div class="brand-title">Dr.Mahdi Radar</div>
+                        <div class="brand-sub">
+                            <span class="pulse-dot"></span>
+                            <span class="mono">abedi.a.mahdi@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="scope-switcher-box">
+                    <div style="font-size:0.7rem; font-weight:800; color:var(--text-muted); padding:0 2px;">🎯 تفکیک جلسات تقویم:</div>
+                    <button type="button" class="scope-btn active" data-scope="mine">
+                        <span>👤 فقط جلسات خودم</span>
+                        <span class="num-fa" style="font-weight:900;">۱۱ جلسه</span>
+                    </button>
+                    <button type="button" class="scope-btn" data-scope="team">
+                        <span>👥 جلسات تیم (بدون من)</span>
+                        <span class="num-fa" style="font-weight:900;">۸ جلسه</span>
+                    </button>
+                    <button type="button" class="scope-btn" data-scope="all">
+                        <span>📋 کل تقویم</span>
+                        <span class="num-fa" style="font-weight:900;">۱۹ جلسه</span>
+                    </button>
+                </div>
+
+                
+                <nav class="nav-menu" id="sideNav">
+                    <button type="button" class="nav-btn" data-tab="tab-today">
+                        <span class="nav-btn-left"><span>⚡</span><span>برنامه امروز و فردا</span></span>
+                        <span class="nav-badge num-fa">۴ جلسه</span>
+                    </button>
+                    <button type="button" class="nav-btn active" data-tab="tab-week">
+                        <span class="nav-btn-left"><span>🗓️</span><span>برنامه کل هفته (۷ روز)</span></span>
+                        <span class="nav-badge num-fa" id="sideWeekBadge">۱۱</span>
+                    </button>
+                    <button type="button" class="nav-btn" data-tab="tab-insights">
+                        <span class="nav-btn-left"><span>🪐</span><span>Orbit</span></span>
+                        <span class="nav-badge" style="color:var(--emerald);">۴ اقدام</span>
+                    </button>
+                    <button type="button" class="nav-btn" data-tab="tab-email">
+                        <span class="nav-btn-left"><span>📬</span><span>Gmail</span></span>
+                        <span class="nav-badge num-fa">۲۰۱</span>
+                    </button>
+                    <button type="button" class="nav-btn" data-tab="tab-archive">
+                        <span class="nav-btn-left"><span>📈</span><span>آرشیو و روند ۱۵ روزه</span></span>
+                        <span class="nav-badge num-fa">۱۵ روز</span>
+                    </button>
+                </nav>
+            </div>
+
+            <div class="sidebar-telemetry">
+                <div class="telemetry-row">
+                    <span style="color:var(--text-muted);">وضعیت هسته:</span>
+                    <span class="status-online-pill"><span class="pulse-dot"></span>فعال (Local DB)</span>
+                </div>
+                <div class="telemetry-row">
+                    <span style="color:var(--text-muted);">آخرین آپدیت:</span>
+                    <span style="font-weight:800; color:var(--emerald);" id="lastSyncDisplay">امروز ۱۰:۰۰</span>
+                </div>
+                <div class="telemetry-row">
+                    <span style="color:var(--text-muted);">تا آپدیت بعدی:</span>
+                    <span class="mono" style="font-weight:900; color:var(--cyan); font-size:0.92rem; letter-spacing:1px;" id="nextSyncCountdown">۰۵:۵۵:۲۹</span>
+                </div>
+            </div>
+        </aside>
+
+        
+        <div class="app-main">
+
+            
+            <header class="app-topbar">
+                <div class="topbar-right">
+                    
+                    <div class="top-category-tabs" id="topTabs">
+                        <button type="button" class="cat-tab-btn" data-tab="tab-today">
+                            <span>⚡</span><span>امروز و فردا</span>
+                        </button>
+                        <button type="button" class="cat-tab-btn active" data-tab="tab-week">
+                            <span>🗓️</span><span>کل هفته</span>
+                        </button>
+                        <button type="button" class="cat-tab-btn" data-tab="tab-insights">
+                            <span>🪐</span><span>Orbit</span>
+                        </button>
+                        <button type="button" class="cat-tab-btn" data-tab="tab-email">
+                            <span>📬</span><span>Gmail</span>
+                        </button>
+                        <button type="button" class="cat-tab-btn" data-tab="tab-archive">
+                            <span>📈</span><span>آرشیو</span>
+                        </button>
+                    </div>
+
+                    <div class="live-clock-chip">
+                        <span>🇮🇷</span>
+                        <span id="liveTehranClock" style="color:var(--cyan); font-weight:900;">۱۱:۰۴:۳۱</span>
+                        <span style="color:var(--text-muted);">|</span>
+                        <span id="liveJalaliDate">۶ آبان ۱۴۰۵</span>
+                    </div>
+                </div>
+
+                <div class="topbar-left">
+                    <button type="button" class="btn-action" id="themeBtn">
+                        <span id="themeIcon">☀️</span>
+                        <span id="themeText">پوسته روشن</span>
+                    </button>
+                    <button type="button" class="btn-action btn-primary" id="downloadHtmlBtn">
+                        <span>⬇️</span>
+                        <span>دانلود فایل HTML</span>
+                    </button>
+                </div>
+            </header>
+
+            
+            <div class="workspace-body">
+
+                
+                <div class="kpi-grid">
+                    <div class="kpi-card" data-switch-to="tab-week">
+                        <div>
+                            <div class="kpi-title">جلسات شخصی من (۷ روز آینده)</div>
+                            <div class="kpi-num num-fa" id="kpiNum1" style="color:var(--cyan);">۱۱ جلسه</div>
+                            <div class="kpi-foot">۱۶.۲۵ ساعت از ۴۲ ساعت کاری (۳۹٪)</div>
+                        </div>
+                        <span style="font-size:1.4rem;">👤</span>
+                    </div>
+
+                    <div class="kpi-card" data-switch-to="tab-today">
+                        <div>
+                            <div class="kpi-title">وضعیت برنامهٔ امروز (۵ آبان)</div>
+                            <div class="kpi-num num-fa" style="color:var(--emerald);">۴ جلسه</div>
+                            <div class="kpi-foot">کاملاً منظم و بدون هیچ تداخل زمانی ✅</div>
+                        </div>
+                        <span style="font-size:1.4rem;">✨</span>
+                    </div>
+
+                    <div class="kpi-card" data-switch-to="tab-insights">
+                        <div>
+                            <div class="kpi-title">تحلیل و پیشنهادهای Orbit</div>
+                            <div class="kpi-num num-fa" style="color:var(--amber);">۴ پیشنهاد</div>
+                            <div class="kpi-foot">رفع تداخل ۶ آبان + پالایش جیمیل</div>
+                        </div>
+                        <span style="font-size:1.4rem;">💡</span>
+                    </div>
+
+                    <div class="kpi-card" data-switch-to="tab-email">
+                        <div>
+                            <div class="kpi-title">ایمیل‌های خوانده‌نشده (Gmail)</div>
+                            <div class="kpi-num num-fa" style="color:var(--rose);">۲۰۱ ایمیل</div>
+                            <div class="kpi-foot">۷۱.۴٪ خبرنامه و هشدار خودکار</div>
+                        </div>
+                        <span style="font-size:1.4rem;">📬</span>
+                    </div>
+                </div>
+
+                
+                <div class="tab-content-view" id="tab-today">
+                    <div class="dashboard-card">
+                        <div class="card-head">
+                            <div class="card-head-left">
+                                <div class="card-icon" style="background:var(--emerald-soft); color:var(--emerald);">⚡</div>
+                                <div>
+                                    <h2 id="tab1MainHeading">برنامه عملیاتی امروز و فردا (چهارشنبه 6 آبان و پنج‌شنبه 7 آبان)</h2>
+                                    <p>تمرکز روی جلسات فوری، فواصل تنفس و رفع تداخل زمانی</p>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:6px;">
+                                <button type="button" class="btn-action" id="todayFilterBtn" style="background:var(--cyan-soft); color:var(--cyan); border-color:var(--border-active);">امروز: ۶ آبان (۴ جلسه)</button>
+                                <button type="button" class="btn-action" id="tomorrowFilterBtn">فردا: ۷ آبان (۰ جلسه)</button>
+                            </div>
+                        </div>
+
+                        
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;" id="todayFlagsGrid"><div style="background:var(--rose-soft); border-right:4px solid var(--rose); border-radius:14px; padding:12px 14px;"><div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:800; color:var(--rose);"><span>⚠️ گره زمانی امروز (نیاز به اقدام)</span><span class="pill-badge pill-rose">امروز ۱۱:۰۰</span></div><div style="font-size:0.86rem; font-weight:800; margin-top:4px;">همپوشانی جلسه آقای رجبی با جلسه ماهانه آرتین</div><div style="font-size:0.73rem; color:var(--text-secondary); margin-top:2px;">پیشنهاد: انتقال جلسه آقای رجبی به ساعت ۱۴:۰۰ عصر امروز چهارشنبه</div></div><div style="background:var(--cyan-soft); border-right:4px solid var(--cyan); border-radius:14px; padding:12px 14px;"><div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:800; color:var(--cyan);"><span>🧠 چشم‌انداز فردا (پنج‌شنبه)</span><span class="pill-badge pill-cyan">روز آزاد</span></div><div style="font-size:0.86rem; font-weight:800; margin-top:4px;">فردا (پنج‌شنبه 7 آبان) جلسه‌ای ثبت نشده است</div><div style="font-size:0.73rem; color:var(--text-secondary); margin-top:2px;">فرصت عالی برای کار عمیق استراتژیک، پیگیری ارزیابی‌ها و پالایش ایمیل‌ها</div></div></div>
+
+                        
+                        <div class="gantt-card">
+                            <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.74rem; font-weight:800;">
+                                <span style="color:var(--emerald);">✨ تایم‌لاین ساعتی جلسات شخصی من در ۵ و ۶ آبان (۰۷:۳۰ تا ۱۷:۳۰)</span>
+                                <span class="pill-badge pill-emerald">روی هر بلوک کلیک کنید</span>
+                            </div>
+                            <div class="gantt-ruler num-fa">
+                                <span>۰۷:۳۰</span><span>۰۸:۳۰</span><span>۰۹:۳۰</span><span>۱۰:۳۰</span><span>۱۱:۳۰</span>
+                                <span>۱۲:۳۰</span><span>۱۳:۳۰</span><span>۱۴:۳۰</span><span>۱۵:۳۰</span><span>۱۶:۳۰+</span>
+                            </div>
+                            <div class="gantt-tracks">
+                                <div class="gantt-row">
+                                    <div class="gantt-item" data-ev-id="ev0" style="left:2.5%; width:22.5%; background:linear-gradient(90deg,#f59e0b,#d97706);">۵ آبان: 🚩 شورای مدیران ارشد (۰۷:۴۵-۱۰)</div>
+                                    <div class="gantt-item" data-ev-id="ev2" style="left:27.5%; width:15%; background:linear-gradient(90deg,#10b981,#059669);">آقای مومنی (۱۰:۱۵-۱۱:۴۵)</div>
+                                    <div class="gantt-item" data-ev-id="ev5" style="left:45%; width:10%; background:linear-gradient(90deg,#0284c7,#4f46e5);">پیگیری جذب (۱۲-۱۳)</div>
+                                    <div class="gantt-item" data-ev-id="ev6" style="left:65%; width:15%; background:linear-gradient(90deg,#0284c7,#6366f1);">خانم طالش‌پور (۱۴-۱۵:۳۰)</div>
+                                </div>
+                                <div class="gantt-row">
+                                    <div class="gantt-item" data-ev-id="ev9" style="left:15%; width:15%; background:linear-gradient(90deg,#10b981,#059669);">۶ آبان: خانم حبیبی (۰۹-۱۰:۳۰)</div>
+                                    <div class="gantt-item" data-ev-id="ev11" style="left:35%; width:15%; background:linear-gradient(90deg,#f43f5e,#e11d48);">⚠️ آقای رجبی + ماهانه آرتین (۱۱-۱۲:۳۰)</div>
+                                    <div class="gantt-item" data-ev-id="ev13" style="left:85%; width:13%; background:linear-gradient(90deg,#0284c7,#4f46e5);">آقای اسفندیاری (۱۶-۱۷:۳۰)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div style="display:flex; flex-direction:column; gap:8px;">
+                            <div style="font-size:0.8rem; font-weight:800; color:var(--text-muted);" id="todayAgendaTitle">لیست جلسات چهارشنبه 6 آبان (امروز):</div>
+                            <div class="agenda-items" id="todayAgendaList"><div class="agenda-row" data-open="ev9"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۳۰</span><div><div class="agenda-name">جلسه آقای عابدی با خانم حبیبی</div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev11"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۳۰</span><div><div class="agenda-name">جلسه آقای عابدی با آقای رجبی</div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه ماهانه آرتین</span></div></div><div class="agenda-row" data-open="ev12"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name">جلسه ماهانه مدیر سرمایه انسانی با مدیر اجرایی آرتین</div><div class="agenda-meta">چهارشنبه ۶ آبان • دفتر آرتین</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه آقای رجبی</span></div></div><div class="agenda-row" data-open="ev13"><div class="agenda-left"><span class="time-box num-fa">۱۶:۰۰ – ۱۷:۳۰</span><div><div class="agenda-name">جلسه آقای عابدی با آقای اسفندیاری</div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="tab-content-view active-tab-view" id="tab-week">
+                    <div class="dashboard-card">
+                        <div class="card-head">
+                            <div class="card-head-left">
+                                <div class="card-icon" style="background:var(--cyan-soft); color:var(--cyan);">🗓️</div>
+                                <div>
+                                    <h2>توزیع روزانه و برنامه ۷ روز آینده (۵ تا ۱۱ آبان ۱۴۰۵)</h2>
+                                    <p>پالایش بر اساس حضور <span class="mono">abedi.a.mahdi@gmail.com</span> • کلیک روی هر ستون = فیلتر جلسات آن روز</p>
+                                </div>
+                            </div>
+                            <span class="pill-badge pill-cyan num-fa" id="weekCountBadge">۱۱ جلسه شخصی</span>
+                        </div>
+
+                        
+                        <div class="chart-stage">
+                            <div class="v-bars-grid">
+                                <div class="v-bar-col" data-col-day="2026-10-27">
+                                    <span class="v-bar-count num-fa">۴ <span style="font-size:0.62rem; color:var(--text-muted);">(گذشته)</span></span>
+                                    <div class="v-bar-track"><div class="v-bar-fill" style="height: 100%; opacity: 0.38;"></div></div>
+                                    <div class="v-bar-day">سه‌شنبه<br>۵ آبان</div>
+                                </div>
+                                <div class="v-bar-col selected-col" data-col-day="2026-10-28">
+                                    <span class="v-bar-count num-fa" style="color:var(--rose);">۴ ⭐امروز</span>
+                                    <div class="v-bar-track"><div class="v-bar-fill critical" style="height: 100%;"></div></div>
+                                    <div class="v-bar-day">چهارشنبه<br>۶ آبان</div>
+                                </div>
+                                <div class="v-bar-col" data-col-day="2026-10-31">
+                                    <span class="v-bar-count num-fa" style="color:var(--cyan);">۲</span>
+                                    <div class="v-bar-track"><div class="v-bar-fill" style="height: 50%;"></div></div>
+                                    <div class="v-bar-day">شنبه<br>۹ آبان</div>
+                                </div>
+                                <div class="v-bar-col" data-col-day="2026-11-01">
+                                    <span class="v-bar-count num-fa" style="color:var(--cyan);">۱</span>
+                                    <div class="v-bar-track"><div class="v-bar-fill" style="height: 25%;"></div></div>
+                                    <div class="v-bar-day">یکشنبه<br>۱۰ آبان</div>
+                                </div>
+                                <div class="v-bar-col" data-col-day="2026-11-02">
+                                    <span class="v-bar-count num-fa" style="color:var(--text-muted);">۰</span>
+                                    <div class="v-bar-track"><div class="v-bar-fill" style="height: 5%; opacity:0.25;"></div></div>
+                                    <div class="v-bar-day">دوشنبه<br>۱۱ آبان</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div style="display:flex; flex-direction:column; gap:8px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:0.8rem; font-weight:800; color:var(--text-muted);" id="weekAgendaLabel">نمایش همه جلسات شخصی من (۱۱ جلسه):</span>
+                                <button type="button" class="btn-action" id="showAllWeekBtn" style="font-size:0.72rem; padding:4px 10px;">نمایش همه</button>
+                            </div>
+                            <div class="agenda-items" id="weekAgendaList"><div class="agenda-row" data-open="ev0"><div class="agenda-left"><span class="time-box num-fa">۰۷:۴۵ – ۱۰:۰۰</span><div><div class="agenda-name">جلسه شورای مدیران ارشد سازمان</div><div class="agenda-meta">سه‌شنبه ۵ آبان • طبقه هفتم جنوبی</div></div></div><div><span class="pill-badge pill-amber">🚩 مهم</span><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev2"><div class="agenda-left"><span class="time-box num-fa">۱۰:۱۵ – ۱۱:۴۵</span><div><div class="agenda-name">جلسه آقای عابدی با آقای مومنی</div><div class="agenda-meta">سه‌شنبه ۵ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev5"><div class="agenda-left"><span class="time-box num-fa">۱۲:۰۰ – ۱۳:۰۰</span><div><div class="agenda-name">جلسه هفتگی پیگیری جذب</div><div class="agenda-meta">سه‌شنبه ۵ آبان • اتاق جلسه HR</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev6"><div class="agenda-left"><span class="time-box num-fa">۱۴:۰۰ – ۱۵:۳۰</span><div><div class="agenda-name">جلسه با خانم طالش‌پور</div><div class="agenda-meta">سه‌شنبه ۵ آبان • Google Meet</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev9"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۳۰</span><div><div class="agenda-name">جلسه آقای عابدی با خانم حبیبی</div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev11"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۳۰</span><div><div class="agenda-name">جلسه آقای عابدی با آقای رجبی</div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه ماهانه آرتین</span></div></div><div class="agenda-row" data-open="ev12"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name">جلسه ماهانه مدیر سرمایه انسانی با مدیر اجرایی آرتین</div><div class="agenda-meta">چهارشنبه ۶ آبان • دفتر آرتین</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه آقای رجبی</span></div></div><div class="agenda-row" data-open="ev13"><div class="agenda-left"><span class="time-box num-fa">۱۶:۰۰ – ۱۷:۳۰</span><div><div class="agenda-name">جلسه آقای عابدی با آقای اسفندیاری</div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev14"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۰۰</span><div><div class="agenda-name">جلسه آقای عابدی با آقای علیرضا یزدی</div><div class="agenda-meta">شنبه ۹ آبان • دفتر مرکزی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev15"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۳:۰۰</span><div><div class="agenda-name">جلسه ارتقا سرکار خانم گلشن افضلی</div><div class="agenda-meta">شنبه ۹ آبان • دفتر مرکزی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev16"><div class="agenda-left"><span class="time-box num-fa">۱۰:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name">کمیته منابع و مصارف</div><div class="agenda-meta">یکشنبه ۱۰ آبان • طبقه هفتم جنوبی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="tab-content-view" id="tab-insights">
+                    <div class="dashboard-card">
+                        <div class="card-head">
+                            <div class="card-head-left">
+                                <div class="card-icon" style="background:var(--purple-soft); color:var(--purple);">🪐</div>
+                                <div>
+                                    <h2>Orbit — تحلیل هوشمند و بهینه‌سازی بار اجرایی</h2>
+                                    <p>پایش مداری ۱۶.۲۵ ساعت جلسات شخصی، ماتریس حرارتی تمرکز، و ۴ تصمیم اجرایی هوشمند</p>
+                                </div>
+                            </div>
+                            <span class="pill-badge pill-purple">امتیاز سلامت تقویم در Orbit: ۸۶ / ۱۰۰</span>
+                        </div>
+
+                        
+                        <div style="display:grid; grid-template-columns:1fr 1.25fr; gap:16px;">
+                            
+                            <div style="background:var(--bg-inner); border:1px solid var(--border-subtle); border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:12px;">
+                                <div style="font-size:0.8rem; font-weight:800; color:var(--emerald);">🪐 سبد تخصیص زمان در مدار اجرایی شما (۱۶.۲۵ ساعت)</div>
+
+                                <div>
+                                    <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:700;">
+                                        <span>🤝 جلسات ۱ به ۱ و هماهنگی فردی (۶ جلسه)</span>
+                                        <span class="num-fa" style="color:var(--cyan);">۸.۵ ساعت (۵۲٪)</span>
+                                    </div>
+                                    <div style="height:7px; background:rgba(148,163,184,0.1); border-radius:999px; overflow:hidden; margin-top:4px;">
+                                        <div style="width:52%; height:100%; background:linear-gradient(90deg,#38bdf8,#6366f1); border-radius:999px;"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:700;">
+                                        <span>🏛️ کمیته‌های راهبردی و مدیریت ارشد (۳ جلسه)</span>
+                                        <span class="num-fa" style="color:var(--amber);">۵.۲۵ ساعت (۳۲٪)</span>
+                                    </div>
+                                    <div style="height:7px; background:rgba(148,163,184,0.1); border-radius:999px; overflow:hidden; margin-top:4px;">
+                                        <div style="width:32%; height:100%; background:linear-gradient(90deg,#fbbf24,#f59e0b); border-radius:999px;"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:700;">
+                                        <span>🌱 توسعه، ارتقا و جذب (۲ جلسه)</span>
+                                        <span class="num-fa" style="color:var(--emerald);">۲.۵ ساعت (۱۶٪)</span>
+                                    </div>
+                                    <div style="height:7px; background:rgba(148,163,184,0.1); border-radius:999px; overflow:hidden; margin-top:4px;">
+                                        <div style="width:16%; height:100%; background:linear-gradient(90deg,#34d399,#059669); border-radius:999px;"></div>
+                                    </div>
+                                </div>
+
+                                <div style="font-size:0.72rem; color:var(--text-muted); padding-top:6px; border-top:1px dashed var(--border-subtle);">
+                                    💡 <strong>نتیجه:</strong> ۶۹٪ بار جلسات در سه‌شنبه و چهارشنبه فشرده شده؛ یکشنبه عصر و دوشنبه کاملاً آزاد است.
+                                </div>
+                            </div>
+
+                            
+                            <div style="background:var(--bg-inner); border:1px solid var(--border-subtle); border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:10px;">
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <span style="font-size:0.8rem; font-weight:800; color:var(--amber);">🔥 ماتریس حرارتی مداری و پنجره‌های تمرکز (Orbit Heatmap)</span>
+                                    <span class="pill-badge pill-amber">سبز = کار عمیق</span>
+                                </div>
+
+                                <div class="heatmap-grid num-fa">
+                                    <div class="hm-head">روز / بازه</div>
+                                    <div class="hm-head">۰۸-۱۰</div>
+                                    <div class="hm-head">۱۰-۱۲</div>
+                                    <div class="hm-head">۱۲-۱۴</div>
+                                    <div class="hm-head">۱۴-۱۶</div>
+                                    <div class="hm-head">۱۶-۱۸</div>
+
+                                    <div style="font-weight:700; color:var(--text-secondary);">۵ آبان</div>
+                                    <div class="hm-cell hm-crit" title="شورای مدیران ارشد">🚩 شورا</div>
+                                    <div class="hm-cell hm-busy" title="آقای مومنی">مومنی</div>
+                                    <div class="hm-cell hm-busy" title="پیگیری جذب">جذب</div>
+                                    <div class="hm-cell hm-busy" title="خانم طالش‌پور">طالش‌پور</div>
+                                    <div class="hm-cell hm-free" title="آزاد">آزاد ✨</div>
+
+                                    <div style="font-weight:700; color:var(--text-secondary);">۶ آبان</div>
+                                    <div class="hm-cell hm-busy" title="خانم حبیبی">حبیبی</div>
+                                    <div class="hm-cell hm-clash" title="تداخل آقای رجبی + آرتین">⚡ تداخل</div>
+                                    <div class="hm-cell hm-free" title="تمرکز">تمرکز ✨</div>
+                                    <div class="hm-cell hm-free" title="تمرکز">تمرکز ✨</div>
+                                    <div class="hm-cell hm-busy" title="آقای اسفندیاری">اسفندیاری</div>
+
+                                    <div style="font-weight:700; color:var(--text-secondary);">۹ آبان</div>
+                                    <div class="hm-cell hm-busy" title="آقای یزدی">یزدی</div>
+                                    <div class="hm-cell hm-busy" title="جلسه ارتقا افضلی">ارتقا</div>
+                                    <div class="hm-cell hm-busy" title="ادامه ارتقا">ارتقا</div>
+                                    <div class="hm-cell hm-free" title="آزاد">عمیق 🧠</div>
+                                    <div class="hm-cell hm-free" title="آزاد">عمیق 🧠</div>
+
+                                    <div style="font-weight:700; color:var(--text-secondary);">۱۰ آبان</div>
+                                    <div class="hm-cell hm-free" title="آزاد">عمیق 🧠</div>
+                                    <div class="hm-cell hm-crit" title="کمیته منابع">کمیته</div>
+                                    <div class="hm-cell hm-free" title="آزاد">عمیق 🧠</div>
+                                    <div class="hm-cell hm-free" title="آزاد">عمیق 🧠</div>
+                                    <div class="hm-cell hm-free" title="آزاد">عمیق 🧠</div>
+
+                                    <div style="font-weight:700; color:var(--text-secondary);">۱۱ آبان</div>
+                                    <div class="hm-cell hm-free" title="کل روز بدون جلسه">طلایی 🌟</div>
+                                    <div class="hm-cell hm-free" title="کل روز بدون جلسه">طلایی 🌟</div>
+                                    <div class="hm-cell hm-free" title="کل روز بدون جلسه">طلایی 🌟</div>
+                                    <div class="hm-cell hm-free" title="کل روز بدون جلسه">طلایی 🌟</div>
+                                    <div class="hm-cell hm-free" title="کل روز بدون جلسه">طلایی 🌟</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div style="display:flex; flex-direction:column; gap:10px; margin-top:6px;">
+                            <div style="font-size:0.85rem; font-weight:800; color:var(--text-primary);">۴ اقدام و پیشنهاد عملیاتی Orbit برای بهبود هفته شما:</div>
+
+                            <div class="rec-grid">
+                                <div class="rec-card" id="rc1">
+                                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                                        <span class="pill-badge pill-rose">🚨 اولویت ۱ • رفع تداخل ۶ آبان</span>
+                                        <span class="num-fa" style="font-size:0.72rem; color:var(--text-muted);">چهارشنبه ساعت ۱۱:۰۰</span>
+                                    </div>
+                                    <div class="rec-title">انتقال «جلسه با آقای رجبی» به ساعت ۱۴:۰۰ چهارشنبه</div>
+                                    <p class="rec-body">
+                                        ساعت ۱۱:۰۰ چهارشنبه هم‌زمان دو جلسه با حضور شما ثبت است (آقای رجبی و جلسه ماهانه آرتین). تقویم شما از ۱۲:۳۰ تا ۱۶:۰۰ کاملاً خالی است. انتقال جلسه به ساعت ۱۴:۰۰ هر دو جلسه را بدون لغو و با تمرکز برگزار می‌کند.
+                                    </p>
+                                    <div class="rec-foot">
+                                        <span style="font-size:0.72rem; font-weight:800; color:var(--emerald);">اثر: حذف ۱۰۰٪ تداخل‌های هفته</span>
+                                        <button type="button" class="btn-action app-rec-btn" data-card="rc1" data-ev="ev11" data-note="پیشنهاد تایید شد: هماهنگی انتقال جلسه آقای رجبی به ساعت ۱۴:۰۰ چهارشنبه">ثبت تصمیم</button>
+                                    </div>
+                                </div>
+
+                                <div class="rec-card" id="rc2">
+                                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                                        <span class="pill-badge pill-amber">⚡ اولویت ۲ • بافر انرژی سه‌شنبه</span>
+                                        <span class="num-fa" style="font-size:0.72rem; color:var(--text-muted);">امروز ۵ آبان</span>
+                                    </div>
+                                    <div class="rec-title">جمع‌بندی ۱۰ دقیقه زودتر جلسه آقای مومنی (۱۱:۳۵)</div>
+                                    <p class="rec-body">
+                                        امروز از ۰۷:۴۵ تا ۱۳:۰۰ سه جلسه پشت سر هم دارید (شورای ارشد، مومنی، جذب). پایان جلسه آقای مومنی در ۱۱:۳۵، یک بافر ۲۵ دقیقه‌ای برای تنفس و مرور پرونده‌های جذب پیش از جلسه ساعت ۱۲:۰۰ ایجاد می‌کند.
+                                    </p>
+                                    <div class="rec-foot">
+                                        <span style="font-size:0.72rem; font-weight:800; color:var(--emerald);">اثر: جلوگیری از خستگی ماراتن صبح</span>
+                                        <button type="button" class="btn-action app-rec-btn" data-card="rc2" data-ev="ev2" data-note="پیشنهاد تایید شد: جمع‌بندی جلسه آقای مومنی در ۱۱:۳۵ برای ۲۵ دقیقه بافر">ثبت تصمیم</button>
+                                    </div>
+                                </div>
+
+                                <div class="rec-card" id="rc3">
+                                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                                        <span class="pill-badge pill-emerald">🎯 اولویت ۳ • پنجره کار عمیق</span>
+                                        <span class="num-fa" style="font-size:0.72rem; color:var(--text-muted);">۱۰ و ۱۱ آبان</span>
+                                    </div>
+                                    <div class="rec-title">قفل‌کردن صبح دوشنبه برای چرخه ارزیابی عملکرد</div>
+                                    <p class="rec-body">
+                                        روز دوشنبه ۱۱ آبان تقویم شخصی شما کاملاً باز است (۰ جلسه). پیشنهاد می‌شود ساعت ۰۹:۰۰ تا ۱۲:۰۰ دوشنبه را در تقویم برای «کار عمیق / چرخه ارزیابی عملکرد ۵ معاونت» بلوکه کنید تا با جلسات متفرقه پر نشود.
+                                    </p>
+                                    <div class="rec-foot">
+                                        <span style="font-size:0.72rem; font-weight:800; color:var(--emerald);">اثر: ذخیره ۶ ساعت کار استراتژیک</span>
+                                        <button type="button" class="btn-action app-rec-btn" data-card="rc3" data-ev="ev16" data-note="پیشنهاد تایید شد: بلوکه کردن صبح دوشنبه ۱۱ آبان برای کار عمیق">ثبت تصمیم</button>
+                                    </div>
+                                </div>
+
+                                <div class="rec-card" id="rc4">
+                                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                                        <span class="pill-badge pill-cyan">📬 اولویت ۴ • پالایش جیمیل</span>
+                                        <span class="num-fa" style="font-size:0.72rem; color:var(--text-muted);">۲۰۱ ایمیل خوانده‌نشده</span>
+                                    </div>
+                                    <div class="rec-title">آرشیو خودکار ۱۴۳ خبرنامه و هشدار امنیتی قدیمی</div>
+                                    <p class="rec-body">
+                                        ۷۱.۴٪ ایمیل‌های خوانده‌نشده خبرنامه‌های تبلیغاتی و هشدارهای خودکار هستند. ایمیل‌های کاری واقعی شما عمدتاً دعوت‌نامه‌های هماهنگی دفتر هستند. با ایجاد یک فیلتر، صندوق ورودی در لحظه خلوت می‌شود.
+                                    </p>
+                                    <div class="rec-foot">
+                                        <span style="font-size:0.72rem; font-weight:800; color:var(--emerald);">اثر: کاهش ۷۱٪ بار ذهنی جیمیل</span>
+                                        <button type="button" class="btn-action app-rec-btn" data-card="rc4" data-ev="" data-note="">ثبت اقدام</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="tab-content-view" id="tab-email">
+                    <div class="dashboard-card">
+                        <div class="card-head">
+                            <div class="card-head-left">
+                                <div class="card-icon" style="background:var(--emerald-soft); color:var(--emerald);">📬</div>
+                                <div>
+                                    <h2>Gmail — پایش و پالایش هوشمند صندوق ورودی</h2>
+                                    <p>کوئری <span class="mono">is:unread in:inbox</span> • تحلیل نمونهٔ ۳۵ رشته ایمیل اخیر</p>
+                                </div>
+                            </div>
+                            <span class="pill-badge pill-emerald num-fa">۲۰۱ خوانده‌نشده</span>
+                        </div>
+
+                        
+                        <div style="background:var(--bg-inner); border:1px solid var(--border-subtle); border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:14px;">
+                            <div class="donut-row">
+                                <svg width="130" height="130" viewBox="0 0 44 44">
+                                    <circle cx="22" cy="22" r="15.9155" fill="transparent" stroke="rgba(148,163,184,0.12)" stroke-width="5.2"></circle>
+                                    <circle cx="22" cy="22" r="15.9155" fill="transparent" stroke="#818cf8" stroke-width="5.2" stroke-dasharray="40 60" stroke-dashoffset="25"></circle>
+                                    <circle cx="22" cy="22" r="15.9155" fill="transparent" stroke="#34d399" stroke-width="5.2" stroke-dasharray="28.6 71.4" stroke-dashoffset="85"></circle>
+                                    <circle cx="22" cy="22" r="15.9155" fill="transparent" stroke="#fbbf24" stroke-width="5.2" stroke-dasharray="25.7 74.3" stroke-dashoffset="56.4"></circle>
+                                    <circle cx="22" cy="22" r="15.9155" fill="transparent" stroke="#fb7185" stroke-width="5.2" stroke-dasharray="5.7 94.3" stroke-dashoffset="30.7"></circle>
+                                </svg>
+
+                                <div style="display:flex; flex-direction:column; gap:6px;">
+                                    <div style="display:flex; justify-content:space-between; font-size:0.77rem; background:var(--bg-surface); padding:6px 12px; border-radius:8px;">
+                                        <span>🟣 خبرنامه و تبلیغاتی</span>
+                                        <span class="num-fa" style="font-weight:800; color:#818cf8;">۴۰.۰٪ (۱۴)</span>
+                                    </div>
+                                    <div style="display:flex; justify-content:space-between; font-size:0.77rem; background:var(--bg-surface); padding:6px 12px; border-radius:8px;">
+                                        <span>🟢 کاری یا شخصی واقعی</span>
+                                        <span class="num-fa" style="font-weight:800; color:#34d399;">۲۸.۶٪ (۱۰)</span>
+                                    </div>
+                                    <div style="display:flex; justify-content:space-between; font-size:0.77rem; background:var(--bg-surface); padding:6px 12px; border-radius:8px;">
+                                        <span>🟡 هشدار امنیتی / حساب</span>
+                                        <span class="num-fa" style="font-weight:800; color:#fbbf24;">۲۵.۷٪ (۹)</span>
+                                    </div>
+                                    <div style="display:flex; justify-content:space-between; font-size:0.77rem; background:var(--bg-surface); padding:6px 12px; border-radius:8px;">
+                                        <span>🔴 رسید مالی / بانکی</span>
+                                        <span class="num-fa" style="font-weight:800; color:#fb7185;">۵.۷٪ (۲)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="compbar">
+                                <div class="compbar-seg" style="width:40%; background:#818cf8;"></div>
+                                <div class="compbar-seg" style="width:28.6%; background:#34d399;"></div>
+                                <div class="compbar-seg" style="width:25.7%; background:#fbbf24;"></div>
+                                <div class="compbar-seg" style="width:5.7%; background:#fb7185;"></div>
+                            </div>
+                        </div>
+
+                        
+                        <div style="display:flex; flex-direction:column; gap:8px;">
+                            <div style="font-size:0.8rem; font-weight:800; color:var(--emerald);">📌 ۳ ایمیل اخیر «کاری یا شخصی واقعی» (لینک مستقیم جیمیل):</div>
+
+                            <div style="background:var(--bg-inner); border-right:4px solid var(--emerald); border-radius:12px; padding:10px 14px;">
+                                <div style="display:flex; justify-content:space-between; font-size:0.71rem; color:var(--text-muted);">
+                                    <span style="color:var(--emerald); font-weight:700;">هماهنگی دفتر (مهسا)</span>
+                                    <span class="num-fa">دوشنبه ۴ آبان ۱۴۰۵ • ۰۹:۳۵</span>
+                                </div>
+                                <div style="font-size:0.82rem; font-weight:700; margin-top:2px;">
+                                    <a href="https://mail.google.com/mail/?authuser=abedi.a.mahdi@gmail.com#all/thread-f:1880091255172528438" target="_blank">
+                                        دعوت‌نامه: جلسه آقای عابدی با آقای علیرضا یزدی (شنبه ۹ آبان، ۰۹:۰۰ تا ۱۰:۰۰) ↗
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div style="background:var(--bg-inner); border-right:4px solid var(--emerald); border-radius:12px; padding:10px 14px;">
+                                <div style="display:flex; justify-content:space-between; font-size:0.71rem; color:var(--text-muted);">
+                                    <span style="color:var(--emerald); font-weight:700;">هماهنگی دفتر (مهسا)</span>
+                                    <span class="num-fa">یکشنبه ۳ آبان ۱۴۰۵ • ۱۲:۱۰</span>
+                                </div>
+                                <div style="font-size:0.82rem; font-weight:700; margin-top:2px;">
+                                    <a href="https://mail.google.com/mail/?authuser=abedi.a.mahdi@gmail.com#all/thread-f:1880010401164330702" target="_blank">
+                                        لغو رویداد: لغو جلسه Focus Group (یکشنبه ۳ آبان، ساعت ۱۵:۰۰) ↗
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div style="background:var(--bg-inner); border-right:4px solid var(--emerald); border-radius:12px; padding:10px 14px;">
+                                <div style="display:flex; justify-content:space-between; font-size:0.71rem; color:var(--text-muted);">
+                                    <span style="color:var(--emerald); font-weight:700;">هماهنگی دفتر (مهسا)</span>
+                                    <span class="num-fa">شنبه ۲ آبان ۱۴۰۵ • ۱۴:۴۵</span>
+                                </div>
+                                <div style="font-size:0.82rem; font-weight:700; margin-top:2px;">
+                                    <a href="https://mail.google.com/mail/?authuser=abedi.a.mahdi@gmail.com#all/thread-f:1879929521926456357" target="_blank">
+                                        به‌روزرسانی دعوت‌نامه: تغییر زمان جلسه آقای عابدی با خانم عابدینی (دوشنبه ۴ آبان) ↗
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="tab-content-view" id="tab-archive">
+                    <div class="dashboard-card">
+                        <div class="card-head">
+                            <div class="card-head-left">
+                                <div class="card-icon" style="background:var(--indigo-soft); color:var(--indigo);">📈</div>
+                                <div>
+                                    <h2>آرشیو روزانه و روند تغییرات بار کاری (۱۵ روز اخیر)</h2>
+                                    <p>پشتیبانی از جستجو در یادداشت‌ها و خروجی اکسل/CSV</p>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <input type="text" id="archSearch" class="btn-action" placeholder="جستجو در آرشیو..." style="cursor:text;">
+                                <button type="button" class="btn-action" id="exportCsvBtn">خروجی CSV</button>
+                            </div>
+                        </div>
+
+                        
+                        <div style="background:var(--bg-inner); border-radius:14px; padding:12px 16px;">
+                            <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:4px;">منحنی تغییرات بار جلسات شخصی در ۱۵ روز گذشته:</div>
+                            <svg viewBox="0 0 900 80" width="100%" height="70" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="archGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#34d399" stop-opacity="0.3"></stop>
+                                        <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M 20 50 L 82 46 L 144 42 L 206 39 L 268 44 L 330 35 L 392 40 L 454 37 L 516 31 L 578 27 L 640 22 L 702 18 L 764 18 L 826 36 L 880 62 L 880 80 L 20 80 Z" fill="url(#archGrad)"></path>
+                                <path d="M 20 50 L 82 46 L 144 42 L 206 39 L 268 44 L 330 35 L 392 40 L 454 37 L 516 31 L 578 27 L 640 22 L 702 18 L 764 18 L 826 36 L 880 62" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"></path>
+                            </svg>
+                        </div>
+
+                        
+                        <div style="overflow-x:auto; border-radius:14px; border:1px solid var(--border-subtle);">
+                            <table class="archive-table" id="archiveTable">
+                                <thead>
+                                    <tr>
+                                        <th>تاریخ (شمسی / میلادی)</th>
+                                        <th>جلسات من (کل تقویم)</th>
+                                        <th>ایمیل خوانده‌نشده</th>
+                                        <th>یادداشت و وضعیت روز</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="today">
+                                        <td>۴ آبان ۱۴۰۵ <span class="num-fa" style="font-size:0.72rem; color:var(--cyan);">(۲۰۲۶-۱۰-۲۶)</span></td>
+                                        <td class="num-fa" style="font-weight:800; color:var(--emerald);">۱۱ <span style="font-size:0.7rem; color:var(--text-muted);">(از ۱۹)</span></td>
+                                        <td class="num-fa" style="font-weight:800; color:var(--cyan);">۲۰۱</td>
+                                        <td>سنگین‌ترین روزها: ۵ و ۶ آبان (هر کدام ۴ جلسه) • پرچم مهم: شورای مدیران ارشد سازمان</td>
+                                    </tr>
+                                    <tr>
+                                        <td>۳ آبان ۱۴۰۵ <span class="num-fa" style="font-size:0.72rem; color:var(--text-muted);">(۲۰۲۶-۱۰-۲۵)</span></td>
+                                        <td class="num-fa">۱۶ <span style="font-size:0.7rem; color:var(--text-muted);">(از ۲۸)</span></td>
+                                        <td>نامشخص</td>
+                                        <td>بازسازی‌شده از تقویم بر اساس حضور ایمیل شخصی شما</td>
+                                    </tr>
+                                    <tr>
+                                        <td>۲ آبان ۱۴۰۵ <span class="num-fa" style="font-size:0.72rem; color:var(--text-muted);">(۲۰۲۶-۱۰-۲۴)</span></td>
+                                        <td class="num-fa">۲۰ <span style="font-size:0.7rem; color:var(--text-muted);">(از ۳۶)</span></td>
+                                        <td>نامشخص</td>
+                                        <td>بازسازی‌شده از تقویم بر اساس حضور ایمیل شخصی شما</td>
+                                    </tr>
+                                    <tr>
+                                        <td>۱ آبان ۱۴۰۵ <span class="num-fa" style="font-size:0.72rem; color:var(--text-muted);">(۲۰۲۶-۱۰-۲۳)</span></td>
+                                        <td class="num-fa">۲۰ <span style="font-size:0.7rem; color:var(--text-muted);">(از ۳۶)</span></td>
+                                        <td>نامشخص</td>
+                                        <td>بازسازی‌شده از تقویم بر اساس حضور ایمیل شخصی شما</td>
+                                    </tr>
+                                    <tr>
+                                        <td>۳۰ مهر ۱۴۰۵</td><td class="num-fa">۳۱</td><td class="num-fa">۲۶۸</td><td>پایان هفته کاری</td>
+                                    </tr>
+                                    <tr>
+                                        <td>۲۹ مهر ۱۴۰۵</td><td class="num-fa">۲۹</td><td class="num-fa">۲۶۴</td><td>جلسات هماهنگی منابع انسانی</td>
+                                    </tr>
+                                    <tr>
+                                        <td>۲۸ مهر ۱۴۰۵</td><td class="num-fa">۲۷</td><td class="num-fa">۲۵۹</td><td>شورای مدیران ارشد</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal-backdrop" id="meetingModal">
+        <div class="modal-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-subtle); padding-bottom:10px;">
+                <h3 id="modalTitle" style="font-size:1rem; font-weight:900; color:var(--cyan);">جزئیات جلسه</h3>
+                <button type="button" class="btn-action" id="closeModalBtn" style="padding:4px 8px;">✕</button>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px; font-size:0.81rem;">
+                <div><strong>📅 زمان:</strong> <span id="modalTime"></span></div>
+                <div><strong>📍 محل:</strong> <span id="modalLoc"></span></div>
+                <div><strong>⚡ تداخل شخصی:</strong> <span id="modalOverlap"></span></div>
+                <div style="margin-top:6px;">
+                    <label style="display:block; margin-bottom:4px; font-weight:700;">📝 یادداشت یا تصمیم هماهنگی (ذخیره در مرورگر):</label>
+                    <textarea id="modalNote" style="width:100%; background:var(--bg-inner); border:1px solid var(--border-subtle); border-radius:10px; color:var(--text-primary); padding:8px; font-family:var(--font-sans); font-size:0.8rem;" rows="3"></textarea>
+                </div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:4px;">
+                <button type="button" class="btn-action btn-primary" id="saveModalNoteBtn">💾 ذخیره یادداشت</button>
+                <a id="modalLink" href="https://calendar.google.com" target="_blank" class="btn-action" style="color:var(--cyan);">باز کردن در تقویم گوگل ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-box" id="appToast">✅ با موفقیت انجام شد</div>
+
+    <script>
+        (function() {
+            var persianMode = true;
+            function toFa(s) {
+                var m = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+                return String(s).replace(/[0-9]/g, function(w) { return m[+w]; });
+            }
+            function toEn(s) {
+                var m = {'۰':'0','۱':'1','۲':'2','۳':'3','۴':'4','۵':'5','۶':'6','۷':'7','۸':'8','۹':'9'};
+                return String(s).replace(/[۰-۹]/g, function(w) { return m[w] || w; });
+            }
+            function fmtNum(s) { return persianMode ? toFa(s) : toEn(s); }
+
+            function g2j(gy, gm, gd) {
+                var g_d_m = [0,31,59,90,120,151,181,212,243,273,304,334];
+                var gy2 = (gm > 2) ? (gy + 1) : gy;
+                var days = 355666 + (365 * gy) + Math.floor((gy2 + 3) / 4) - Math.floor((gy2 + 99) / 100) + Math.floor((gy2 + 399) / 400) + gd + g_d_m[gm - 1];
+                var jy = -1595 + (33 * Math.floor(days / 12053));
+                days %= 12053;
+                jy += 4 * Math.floor(days / 1461);
+                days %= 1461;
+                if (days > 365) { jy += Math.floor((days - 1) / 365); days = (days - 1) % 365; }
+                var jm = (days < 186) ? 1 + Math.floor(days / 31) : 7 + Math.floor((days - 186) / 30);
+                var jd = 1 + ((days < 186) ? (days % 31) : ((days - 186) % 30));
+                return [jy, jm, jd];
+            }
+            var jmName = ['','فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
+
+                        function safeOn(id, event, handler) {
+                var el = document.getElementById(id);
+                if (el) el.addEventListener(event, handler);
+            }
+
+
+            function getTehranInfo() {
+                var now = new Date();
+                var p = new Intl.DateTimeFormat('en-US', {
+                    timeZone: 'Asia/Tehran', year:'numeric', month:'2-digit', day:'2-digit',
+                    hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false
+                }).formatToParts(now);
+                var m = {};
+                for (var i=0; i<p.length; i++) m[p[i].type] = p[i].value;
+                var gy = parseInt(m.year,10)||2026, gm = parseInt(m.month,10)||10, gd = parseInt(m.day,10)||28;
+                
+                var curD = new Date(Date.UTC(gy, gm - 1, gd));
+                var tomD = new Date(Date.UTC(gy, gm - 1, gd + 1));
+                
+                var pad = function(n) { return (n < 10 ? '0' : '') + n; };
+                var todayIso = gy + '-' + pad(gm) + '-' + pad(gd);
+                var tomGy = tomD.getUTCFullYear(), tomGm = tomD.getUTCMonth()+1, tomGd = tomD.getUTCDate();
+                var tomIso = tomGy + '-' + pad(tomGm) + '-' + pad(tomGd);
+
+                var jToday = g2j(gy, gm, gd);
+                var jTom = g2j(tomGy, tomGm, tomGd);
+
+                var daysFa = ['یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنج‌شنبه','جمعه','شنبه'];
+                var todayDayName = daysFa[curD.getUTCDay()];
+                var tomDayName = daysFa[tomD.getUTCDay()];
+
+                var todayJalali = todayDayName + ' ' + jToday[2] + ' ' + jmName[jToday[1]];
+                var tomJalali = tomDayName + ' ' + jTom[2] + ' ' + jmName[jTom[1]];
+
+                return {
+                    todayIso: todayIso,
+                    tomIso: tomIso,
+                    todayJalali: todayJalali,
+                    tomJalali: tomJalali,
+                    todayDayName: todayDayName,
+                    tomDayName: tomDayName,
+                    jTodayD: jToday[2],
+                    jTomD: jTom[2],
+                    jMonthName: jmName[jToday[1]],
+                    jTodayFull: jToday[2] + ' ' + jmName[jToday[1]] + ' ' + jToday[0],
+                    hh: m.hour || '00',
+                    mm: m.minute || '00',
+                    ss: m.second || '00'
+                };
+            }
+
+            var currentActiveTargetDay = null;
+
+            function tickClock() {
+                try {
+                    var tInfo = getTehranInfo();
+                    var clockEl = document.getElementById('liveTehranClock');
+                    if (clockEl) clockEl.textContent = fmtNum(tInfo.hh + ':' + tInfo.mm + ':' + tInfo.ss);
+                    var dateEl = document.getElementById('liveJalaliDate');
+                    if (dateEl) dateEl.textContent = fmtNum(tInfo.jTodayFull);
+
+                    
+                    var curH = parseInt(tInfo.hh, 10);
+                    var curM = parseInt(tInfo.mm, 10);
+                    var curS = parseInt(tInfo.ss, 10);
+                    var curSecTotal = curH * 3600 + curM * 60 + curS;
+
+                    var t10Sec = 10 * 3600; 
+                    var t17Sec = 17 * 3600; 
+
+                    var lastSyncText = '';
+                    var diffSec = 0;
+
+                    if (curSecTotal < t10Sec) {
+                        lastSyncText = 'دیروز ۱۷:۰۰';
+                        diffSec = t10Sec - curSecTotal;
+                    } else if (curSecTotal < t17Sec) {
+                        lastSyncText = 'امروز ۱۰:۰۰';
+                        diffSec = t17Sec - curSecTotal;
+                    } else {
+                        lastSyncText = 'امروز ۱۷:۰۰';
+                        diffSec = (24 * 3600 + t10Sec) - curSecTotal;
+                    }
+
+                    var remH = Math.floor(diffSec / 3600);
+                    var remM = Math.floor((diffSec % 3600) / 60);
+                    var remS = diffSec % 60;
+
+                    var pad2 = function(n) { return (n < 10 ? '0' : '') + n; };
+                    var timerStr = pad2(remH) + ':' + pad2(remM) + ':' + pad2(remS);
+
+                    var lastEl = document.getElementById('lastSyncDisplay');
+                    if (lastEl) lastEl.textContent = fmtNum(lastSyncText);
+
+                    var cdEl = document.getElementById('nextSyncCountdown');
+                    if (cdEl) cdEl.textContent = fmtNum(timerStr);
+                } catch(e) {}
+            }
+            tickClock();
+            setInterval(tickClock, 1000);
+
+            var toastEl = document.getElementById('appToast');
+            function showToast(msg) {
+                if (!toastEl) return;
+                toastEl.textContent = msg;
+                toastEl.classList.add('show');
+                setTimeout(function() { toastEl.classList.remove('show'); }, 2600);
+            }
+
+            var savedNotes = {};
+            try {
+                var raw = localStorage.getItem('mahdi_radar_notes_v4');
+                if (raw) savedNotes = JSON.parse(raw);
+            } catch(e) {}
+
+            var events = [
+                { id:'ev0', isMine:true, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'07:45 – 10:00', title:'جلسه شورای مدیران ارشد سازمان', loc:'طبقه هفتم جنوبی', url:'https://www.google.com/calendar/event?eid=c2ZsbDBmM3A0dnF0M3Y3dHB0MGY5bGUxYnNfMjAyNjEwMjdUMDQxNTAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:true, overlap:'' },
+                { id:'ev1', isMine:false, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'09:00 – 10:00', title:'مصاحبه با خانم کنجی (تیم جذب)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=MTY5ZDRrOWMxaDcwYXBuZzVmczIxamtibmMgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev2', isMine:true, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'10:15 – 11:45', title:'جلسه آقای عابدی با آقای مومنی', loc:'طبقه چهارم', url:'https://www.google.com/calendar/event?eid=NmE0aTgyb2lkaWc3OGFoZ3R0bGRrYzZ2YzYgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev3', isMine:false, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'10:30 – 11:30', title:'مصاحبه با خانم جولایی (تیم جذب)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=N3NzMzZlazRyNmNoY24zcGZtZGxtdTBndXYgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev4', isMine:false, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'11:00 – 12:00', title:'جلسه هفتگی HRBP آرتین با GM آرتین', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=NGtoNjRkZmpwN3FjNjJzaWthNHRsY21zdW5fMjAyNjEwMjdUMDczMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev5', isMine:true, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'12:00 – 13:00', title:'جلسه هفتگی پیگیری جذب', loc:'اتاق جلسه HR', url:'https://www.google.com/calendar/event?eid=MzZlcmxuMWJ1Mjc4ZnNpbjdxM2ttdHZwZmogMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev6', isMine:true, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'14:00 – 15:30', title:'جلسه با خانم طالش‌پور', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=MjhobHU4cmRidm9jNG5nM2R1am51MzQ1c2ggMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev7', isMine:false, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'16:00 – 17:00', title:'مصاحبه با خانم عزیزی (تیم جذب)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=Mzg3OXViNGRjYmN0bzlicWg4N2I3bjZrMzEgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+
+                { id:'ev8', isMine:false, date:'2026-10-28', jalali:'چهارشنبه ۶ آبان', time:'08:00 – 09:00', title:'جلسه هفتگی HRBP پوینت با GM پوینت', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=Nms3MjM5aG1xYWhjMmVtY2JkNTU1Z2JodXJfMjAyNjEwMjhUMDQzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev9', isMine:true, date:'2026-10-28', jalali:'چهارشنبه ۶ آبان', time:'09:00 – 10:30', title:'جلسه آقای عابدی با خانم حبیبی', loc:'طبقه چهارم', url:'https://www.google.com/calendar/event?eid=NG44OW8wZ2dmZWZvN2E2Ym5xYTltbTAzcXEgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev10', isMine:false, date:'2026-10-28', jalali:'چهارشنبه ۶ آبان', time:'09:30 – 10:30', title:'مصاحبه با خانم رمضانی (تیم جذب)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=NTlub2poYXZnNDVjbGVrcHI0Z2pidDZ0NjIgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev11', isMine:true, date:'2026-10-28', jalali:'چهارشنبه ۶ آبان', time:'11:00 – 12:30', title:'جلسه آقای عابدی با آقای رجبی', loc:'طبقه چهارم', url:'https://www.google.com/calendar/event?eid=NmFscnZocTQ0ZzJ1bmppZmNvb2JhMmc4amwgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'همپوشانی شخصی با جلسه ماهانه آرتین' },
+                { id:'ev12', isMine:true, date:'2026-10-28', jalali:'چهارشنبه ۶ آبان', time:'11:00 – 12:00', title:'جلسه ماهانه مدیر سرمایه انسانی با مدیر اجرایی آرتین', loc:'دفتر آرتین', url:'https://www.google.com/calendar/event?eid=NzlmZm10dmowZW4zb3BsajM4MWh1M2JnOGJfMjAyNjEwMjhUMDczMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'همپوشانی شخصی با جلسه آقای رجبی' },
+                { id:'ev13', isMine:true, date:'2026-10-28', jalali:'چهارشنبه ۶ آبان', time:'16:00 – 17:30', title:'جلسه آقای عابدی با آقای اسفندیاری', loc:'طبقه چهارم', url:'https://www.google.com/calendar/event?eid=MHU1aWY0b3F1bWUzaGg2czFuY2ZlNTU4cmkgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+
+                { id:'ev14', isMine:true, date:'2026-10-31', jalali:'شنبه ۹ آبان', time:'09:00 – 10:00', title:'جلسه آقای عابدی با آقای علیرضا یزدی', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=MWMxZWtmZzExMDVvNDI2ajRlanBsbDVsNHMgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev15', isMine:true, date:'2026-10-31', jalali:'شنبه ۹ آبان', time:'11:00 – 13:00', title:'جلسه ارتقا سرکار خانم گلشن افضلی', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=M3JnNnFnN2djcnMxdHBvazByMms4bW5lcmQgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+
+                { id:'ev16', isMine:true, date:'2026-11-01', jalali:'یکشنبه ۱۰ آبان', time:'10:00 – 12:00', title:'کمیته منابع و مصارف', loc:'طبقه هفتم جنوبی', url:'https://www.google.com/calendar/event?eid=M2RrbmEzcmJwMnVlYWU3Z2lhcGlldW9tc2lfMjAyNjExMDFUMDYzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev17', isMine:false, date:'2026-11-01', jalali:'یکشنبه ۱۰ آبان', time:'15:00 – 16:00', title:'جلسه شورای هفتگی پوینت (تیمی)', loc:'دفتر پوینت', url:'https://www.google.com/calendar/event?eid=NTdqdXJvMDdyMXZ0aG9vdGQ2dHFudGQ3ZDFfMjAyNjExMDFUMTEzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
+
+                { id:'ev18', isMine:false, date:'2026-11-02', jalali:'دوشنبه ۱۱ آبان', time:'08:30 – 09:30', title:'جلسه هفتگی HRBP مانی تک با GM مانی تک (تیمی)', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=Mzc1czkxZGxxNmVqZXVmbmtucGRkc3E2ZXBfMjAyNjExMDJUMDUwMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' }
+            ];
+
+            var curScope = 'mine';
+
+            function getScopedList() {
+                var l = [];
+                for (var i=0; i<events.length; i++) {
+                    if (curScope === 'mine' && !events[i].isMine) continue;
+                    if (curScope === 'team' && events[i].isMine) continue;
+                    l.push(events[i]);
+                }
+                return l;
+            }
+
+            function makeItemHtml(it) {
+                var b = '';
+                if (it.imp) b += '<span class="pill-badge pill-amber">🚩 مهم</span>';
+                if (it.overlap) b += '<span class="pill-badge pill-rose">⚠️ ' + it.overlap + '</span>';
+                else b += '<span class="pill-badge pill-emerald">بدون تداخل</span>';
+                if (savedNotes[it.id]) b += '<span class="pill-badge pill-cyan">📝 یادداشت</span>';
+
+                return '<div class="agenda-row" data-open="' + it.id + '">' +
+                    '<div class="agenda-left">' +
+                    '<span class="time-box num-fa">' + fmtNum(it.time) + '</span>' +
+                    '<div>' +
+                    '<div class="agenda-name">' + it.title + '</div>' +
+                    '<div class="agenda-meta">' + it.jalali + ' • ' + it.loc + (savedNotes[it.id] ? ' • 📝 ' + savedNotes[it.id] : '') + '</div>' +
+                    '</div></div>' +
+                    '<div>' + b + '</div>' +
+                    '</div>';
+            }
+
+            function syncDynamicUI(targetDayOverride) {
+                var tInfo = getTehranInfo();
+                var scoped = getScopedList();
+
+                var targetDay = targetDayOverride || currentActiveTargetDay || tInfo.todayIso;
+                currentActiveTargetDay = targetDay;
+
+                
+                var todayEvents = scoped.filter(function(e) { return e.date === tInfo.todayIso; });
+                var tomEvents = scoped.filter(function(e) { return e.date === tInfo.tomIso; });
+
+                
+                var tab1Head = document.getElementById('tab1MainHeading');
+                if (tab1Head) {
+                    tab1Head.textContent = 'برنامه عملیاتی امروز و فردا (' + tInfo.todayJalali + ' و ' + tInfo.tomJalali + ')';
+                }
+
+                
+                var tBtn = document.getElementById('todayFilterBtn');
+                var tmBtn = document.getElementById('tomorrowFilterBtn');
+                if (tBtn) {
+                    tBtn.textContent = 'امروز: ' + fmtNum(tInfo.jTodayD) + ' ' + tInfo.jMonthName + ' (' + fmtNum(todayEvents.length) + ' جلسه)';
+                    if (targetDay === tInfo.todayIso) {
+                        tBtn.style.background = 'var(--cyan-soft)';
+                        tBtn.style.color = 'var(--cyan)';
+                        tBtn.style.borderColor = 'var(--border-active)';
+                    } else {
+                        tBtn.style.background = '';
+                        tBtn.style.color = '';
+                        tBtn.style.borderColor = '';
+                    }
+                }
+                if (tmBtn) {
+                    tmBtn.textContent = 'فردا: ' + fmtNum(tInfo.jTomD) + ' ' + tInfo.jMonthName + ' (' + fmtNum(tomEvents.length) + ' جلسه)';
+                    if (targetDay === tInfo.tomIso) {
+                        tmBtn.style.background = 'var(--cyan-soft)';
+                        tmBtn.style.color = 'var(--cyan)';
+                        tmBtn.style.borderColor = 'var(--border-active)';
+                    } else {
+                        tmBtn.style.background = '';
+                        tmBtn.style.color = '';
+                        tmBtn.style.borderColor = '';
+                    }
+                }
+
+                
+                var kpiTodayTitle = document.getElementById('kpiTodayTitle');
+                var kpiTodayNum = document.getElementById('kpiTodayNum');
+                var kpiTodayFoot = document.getElementById('kpiTodayFoot');
+                if (kpiTodayTitle) kpiTodayTitle.textContent = 'وضعیت برنامه امروز (' + tInfo.todayDayName + ' ' + fmtNum(tInfo.jTodayD) + ' ' + tInfo.jMonthName + ')';
+                if (kpiTodayNum) kpiTodayNum.textContent = fmtNum(todayEvents.length) + ' جلسه';
+                if (kpiTodayFoot) {
+                    var conflictEv = todayEvents.find(function(e) { return !!e.overlap; });
+                    if (conflictEv) {
+                        kpiTodayFoot.innerHTML = '<span style="color:var(--rose); font-weight:800;">⚠️ دارای ۱ تداخل زمانی در ساعت ۱۱:۰۰</span>';
+                        if (kpiTodayNum) kpiTodayNum.style.color = 'var(--rose)';
+                    } else if (todayEvents.length === 0) {
+                        kpiTodayFoot.textContent = 'روز بدون جلسه / زمان مناسب برای کار عمیق ✨';
+                        if (kpiTodayNum) kpiTodayNum.style.color = 'var(--cyan)';
+                    } else {
+                        kpiTodayFoot.textContent = 'کاملاً منظم و بدون هیچ تداخل زمانی ✅';
+                        if (kpiTodayNum) kpiTodayNum.style.color = 'var(--emerald)';
+                    }
+                }
+
+                
+                var flagsGrid = document.getElementById('todayFlagsGrid');
+                if (flagsGrid) {
+                    var card1Html = '';
+                    var card2Html = '';
+
+                    
+                    var todayConflict = todayEvents.find(function(e) { return !!e.overlap; });
+                    var todayImportant = todayEvents.find(function(e) { return !!e.imp; });
+
+                    if (todayConflict) {
+                        card1Html = '<div style="background:var(--rose-soft); border-right:4px solid var(--rose); border-radius:14px; padding:12px 14px;">' +
+                            '<div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:800; color:var(--rose);">' +
+                            '<span>⚠️ گره زمانی امروز (نیاز به اقدام)</span><span class="pill-badge pill-rose">امروز ۱۱:۰۰</span></div>' +
+                            '<div style="font-size:0.86rem; font-weight:800; margin-top:4px;">همپوشانی جلسه آقای رجبی با جلسه ماهانه آرتین</div>' +
+                            '<div style="font-size:0.73rem; color:var(--text-secondary); margin-top:2px;">پیشنهاد: انتقال جلسه آقای رجبی به ساعت ۱۴:۰۰ عصر امروز چهارشنبه</div>' +
+                            '</div>';
+                    } else if (todayImportant) {
+                        card1Html = '<div style="background:var(--amber-soft); border-right:4px solid var(--amber); border-radius:14px; padding:12px 14px;">' +
+                            '<div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:800; color:var(--amber);">' +
+                            '<span>🚩 جلسه مهم امروز</span><span class="pill-badge pill-amber">پرچم مهم</span></div>' +
+                            '<div style="font-size:0.86rem; font-weight:800; margin-top:4px;"><a href="' + todayImportant.url + '" target="_blank">' + todayImportant.title + ' ↗</a></div>' +
+                            '<div style="font-size:0.73rem; color:var(--text-secondary); margin-top:2px;">ساعت ' + fmtNum(todayImportant.time) + ' • ' + todayImportant.loc + '</div>' +
+                            '</div>';
+                    } else {
+                        card1Html = '<div style="background:var(--emerald-soft); border-right:4px solid var(--emerald); border-radius:14px; padding:12px 14px;">' +
+                            '<div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:800; color:var(--emerald);">' +
+                            '<span>✨ وضعیت برنامه امروز</span><span class="pill-badge pill-emerald">' + fmtNum(todayEvents.length) + ' جلسه</span></div>' +
+                            '<div style="font-size:0.86rem; font-weight:800; margin-top:4px;">برنامه منظم و بدون تداخل زمانی شخصی</div>' +
+                            '<div style="font-size:0.73rem; color:var(--text-secondary); margin-top:2px;">تمامی جلسات دارای زمان‌بندی شفاف و بافر کافی هستند.</div>' +
+                            '</div>';
+                    }
+
+                    
+                    if (tomEvents.length === 0) {
+                        card2Html = '<div style="background:var(--cyan-soft); border-right:4px solid var(--cyan); border-radius:14px; padding:12px 14px;">' +
+                            '<div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:800; color:var(--cyan);">' +
+                            '<span>🧠 چشم‌انداز فردا (' + tInfo.tomDayName + ')</span><span class="pill-badge pill-cyan">روز آزاد</span></div>' +
+                            '<div style="font-size:0.86rem; font-weight:800; margin-top:4px;">فردا (' + tInfo.tomJalali + ') جلسه‌ای ثبت نشده است</div>' +
+                            '<div style="font-size:0.73rem; color:var(--text-secondary); margin-top:2px;">فرصت عالی برای کار عمیق استراتژیک، پیگیری ارزیابی‌ها و پالایش ایمیل‌ها</div>' +
+                            '</div>';
+                    } else {
+                        var tomConf = tomEvents.find(function(e) { return !!e.overlap; });
+                        card2Html = '<div style="background:var(--amber-soft); border-right:4px solid var(--amber); border-radius:14px; padding:12px 14px;">' +
+                            '<div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:800; color:var(--amber);">' +
+                            '<span>🗓️ برنامه فردا (' + tInfo.tomDayName + ')</span><span class="pill-badge pill-amber">' + fmtNum(tomEvents.length) + ' جلسه</span></div>' +
+                            '<div style="font-size:0.86rem; font-weight:800; margin-top:4px;">فردا: ' + fmtNum(tomEvents.length) + ' جلسه در تقویم شما ثبت است</div>' +
+                            '<div style="font-size:0.73rem; color:var(--text-secondary); margin-top:2px;">' + (tomConf ? '⚠️ دارای تداخل احتمالی' : 'بدون تداخل زمانی ✅') + '</div>' +
+                            '</div>';
+                    }
+
+                    flagsGrid.innerHTML = card1Html + card2Html;
+                }
+
+                
+                var cols = document.querySelectorAll('.v-bar-col[data-col-day]');
+                for (var ci=0; ci<cols.length; ci++) {
+                    var cDay = cols[ci].getAttribute('data-col-day');
+                    var cntEl = cols[ci].querySelector('.v-bar-count');
+                    var fillEl = cols[ci].querySelector('.v-bar-fill');
+                    if (cDay === tInfo.todayIso) {
+                        cols[ci].classList.add('selected-col');
+                        if (cntEl && !cntEl.textContent.includes('امروز')) {
+                            cntEl.innerHTML = fmtNum(todayEvents.length) + ' <span style="font-size:0.65rem; color:var(--cyan);">⭐امروز</span>';
+                        }
+                    } else if (cDay < tInfo.todayIso) {
+                        cols[ci].classList.remove('selected-col');
+                        if (cntEl) {
+                            var dayCount = scoped.filter(function(e) { return e.date === cDay; }).length;
+                            cntEl.innerHTML = fmtNum(dayCount) + ' <span style="font-size:0.62rem; color:var(--text-muted);">(گذشته)</span>';
+                        }
+                        if (fillEl) fillEl.style.opacity = '0.38';
+                    } else {
+                        cols[ci].classList.remove('selected-col');
+                    }
+                }
+
+                
+                renderAgendas(targetDay);
+            }
+
+            function renderAgendas(filterDay) {
+                var tInfo = getTehranInfo();
+                var scoped = getScopedList();
+                var targetDay = filterDay || currentActiveTargetDay || tInfo.todayIso;
+                currentActiveTargetDay = targetDay;
+
+                var list = [];
+                for (var i=0; i<scoped.length; i++) {
+                    if (scoped[i].date === targetDay) list.push(scoped[i]);
+                }
+
+                var todayTitleEl = document.getElementById('todayAgendaTitle');
+                if (todayTitleEl) {
+                    var dayNameText = (targetDay === tInfo.todayIso) ? (tInfo.todayJalali + ' (امروز)') : ((targetDay === tInfo.tomIso) ? (tInfo.tomJalali + ' (فردا)') : targetDay);
+                    todayTitleEl.textContent = 'لیست جلسات ' + dayNameText + ':';
+                }
+
+                var todayEl = document.getElementById('todayAgendaList');
+                if (todayEl) {
+                    if (list.length === 0) {
+                        todayEl.innerHTML = '<div class="agenda-row"><div class="agenda-name" style="color:var(--text-muted);">جلسه‌ای برای این روز ثبت نشده است (روز آزاد / تمرکز کاری ✨).</div></div>';
+                    } else {
+                        var h = '';
+                        for (var j=0; j<list.length; j++) h += makeItemHtml(list[j]);
+                        todayEl.innerHTML = h;
+                    }
+                }
+
+                
+                var weekEl = document.getElementById('weekAgendaList');
+                if (weekEl) {
+                    var hw = '';
+                    for (var k=0; k<scoped.length; k++) hw += makeItemHtml(scoped[k]);
+                    weekEl.innerHTML = hw;
+                }
+
+                
+                var rows = document.querySelectorAll('.agenda-row[data-open]');
+                for (var r=0; r<rows.length; r++) {
+                    rows[r].addEventListener('click', function() {
+                        openModal(this.getAttribute('data-open'));
+                    });
+                }
+            }
+            syncDynamicUI();
+
+            
+            var activeTab = 'tab-today';
+            function switchTab(tabId) {
+                activeTab = tabId;
+                var views = document.querySelectorAll('.tab-content-view');
+                for (var i=0; i<views.length; i++) {
+                    views[i].classList.toggle('active-tab-view', views[i].id === tabId);
+                }
+                var topBtns = document.querySelectorAll('.cat-tab-btn');
+                for (var j=0; j<topBtns.length; j++) {
+                    topBtns[j].classList.toggle('active', topBtns[j].getAttribute('data-tab') === tabId);
+                }
+                var sideBtns = document.querySelectorAll('#sideNav .nav-btn');
+                for (var k=0; k<sideBtns.length; k++) {
+                    sideBtns[k].classList.toggle('active', sideBtns[k].getAttribute('data-tab') === tabId);
+                }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            var topTabBtns = document.querySelectorAll('.cat-tab-btn');
+            for (var tb=0; tb<topTabBtns.length; tb++) {
+                topTabBtns[tb].addEventListener('click', function() {
+                    switchTab(this.getAttribute('data-tab'));
+                });
+            }
+            var sideTabBtns = document.querySelectorAll('#sideNav .nav-btn');
+            for (var sb=0; sb<sideTabBtns.length; sb++) {
+                sideTabBtns[sb].addEventListener('click', function() {
+                    switchTab(this.getAttribute('data-tab'));
+                });
+            }
+            var kpiCards = document.querySelectorAll('.kpi-card[data-switch-to]');
+            for (var kc=0; kc<kpiCards.length; kc++) {
+                kpiCards[kc].addEventListener('click', function() {
+                    switchTab(this.getAttribute('data-switch-to'));
+                });
+            }
+
+            
+            var todayFilterBtn = document.getElementById('todayFilterBtn');
+            var tomorrowFilterBtn = document.getElementById('tomorrowFilterBtn');
+            var todayAgendaTitle = document.getElementById('todayAgendaTitle');
+
+            if (todayFilterBtn) {
+                todayFilterBtn.addEventListener('click', function() {
+                    var tInfo = getTehranInfo();
+                    syncDynamicUI(tInfo.todayIso);
+                });
+            }
+            if (tomorrowFilterBtn) {
+                tomorrowFilterBtn.addEventListener('click', function() {
+                    var tInfo = getTehranInfo();
+                    syncDynamicUI(tInfo.tomIso);
+                });
+            }
+
+            
+            var scopeBtns = document.querySelectorAll('.scope-btn');
+            for (var sp=0; sp<scopeBtns.length; sp++) {
+                scopeBtns[sp].addEventListener('click', function() {
+                    for (var x=0; x<scopeBtns.length; x++) scopeBtns[x].classList.remove('active');
+                    this.classList.add('active');
+                    curScope = this.getAttribute('data-scope');
+                    var scoped = getScopedList();
+                    var kpi1 = document.getElementById('kpiNum1');
+                    var badge = document.getElementById('weekCountBadge');
+                    var sBadge = document.getElementById('sideWeekBadge');
+                    if (kpi1) kpi1.textContent = fmtNum(scoped.length + ' جلسه');
+                    if (badge) badge.textContent = fmtNum(scoped.length + ' جلسه');
+                    if (sBadge) sBadge.textContent = fmtNum(scoped.length);
+                    syncDynamicUI();
+                    showToast(curScope === 'mine' ? '👤 نمایش جلسات شخصی شما' : (curScope === 'team' ? '👥 نمایش جلسات سایر اعضای تیم' : '📋 نمایش کل تقویم'));
+                });
+            }
+
+            
+            var modal = document.getElementById('meetingModal');
+            var curEventId = null;
+            function openModal(evId) {
+                var ev = null;
+                for (var i=0; i<events.length; i++) {
+                    if (events[i].id === evId) { ev = events[i]; break; }
+                }
+                if (!ev || !modal) return;
+                curEventId = ev.id;
+                document.getElementById('modalTitle').textContent = ev.title;
+                document.getElementById('modalTime').textContent = ev.jalali + ' • ساعت ' + fmtNum(ev.time);
+                document.getElementById('modalLoc').textContent = ev.loc;
+                document.getElementById('modalOverlap').textContent = ev.overlap || 'بدون تداخل زمانی ✅';
+                document.getElementById('modalNote').value = savedNotes[ev.id] || '';
+                document.getElementById('modalLink').href = ev.url;
+                modal.classList.add('open');
+            }
+
+            safeOn('closeModalBtn', 'click', function() {
+                modal.classList.remove('open');
+            });
+            safeOn('saveModalNoteBtn', 'click', function() {
+                if (!curEventId) return;
+                var txt = document.getElementById('modalNote').value.trim();
+                savedNotes[curEventId] = txt;
+                try { localStorage.setItem('mahdi_radar_notes_v4', JSON.stringify(savedNotes)); } catch(e) {}
+                modal.classList.remove('open');
+                renderAgendas();
+                showToast('💾 یادداشت جلسه ذخیره شد');
+            });
+
+            
+            var appRecBtns = document.querySelectorAll('.app-rec-btn');
+            for (var ab=0; ab<appRecBtns.length; ab++) {
+                appRecBtns[ab].addEventListener('click', function() {
+                    var cardId = this.getAttribute('data-card');
+                    var evId = this.getAttribute('data-ev');
+                    var note = this.getAttribute('data-note');
+                    var c = document.getElementById(cardId);
+                    if (c) c.classList.add('applied');
+                    if (evId && note) {
+                        savedNotes[evId] = note;
+                        try { localStorage.setItem('mahdi_radar_notes_v4', JSON.stringify(savedNotes)); } catch(e) {}
+                        renderAgendas();
+                    }
+                    this.textContent = '✅ تصمیم ثبت شد';
+                    showToast('🪐 تصمیم شما در حافظه اربیت ذخیره شد');
+                });
+            }
+
+            
+            var lightMode = false;
+            safeOn('themeBtn', 'click', function() {
+                lightMode = !lightMode;
+                if (lightMode) {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    document.getElementById('themeIcon').textContent = '🌙';
+                    document.getElementById('themeText').textContent = 'پوسته تیره';
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                    document.getElementById('themeIcon').textContent = '☀️';
+                    document.getElementById('themeText').textContent = 'پوسته روشن';
+                }
+            });
+
+            
+            safeOn('downloadHtmlBtn', 'click', function() {
+                var b = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+                var u = URL.createObjectURL(b);
+                var a = document.createElement('a');
+                a.href = u;
+                a.download = 'mahdi-categorized-radar.html';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(u);
+            });
+
+            
+            safeOn('exportCsvBtn', 'click', function() {
+                var trs = document.querySelectorAll('#archiveTable tr');
+                var csv = [];
+                for (var i=0; i<trs.length; i++) {
+                    var tds = trs[i].querySelectorAll('th, td');
+                    var r = [];
+                    for (var j=0; j<tds.length; j++) r.push('"' + tds[j].textContent.replace(/"/g, '""').trim() + '"');
+                    csv.push(r.join(','));
+                }
+                var b = new Blob(['﻿', csv.join(String.fromCharCode(10))], { type: 'text/csv;charset=utf-8;' });
+                var u = URL.createObjectURL(b);
+                var a = document.createElement('a');
+                a.href = u;
+                a.download = 'mahdi-radar-archive.csv';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(u);
+                showToast('📊 فایل CSV دانلود شد');
+            });
+
+            
+            var canvas = document.getElementById('bgCanvas');
+            if (canvas && canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                var w = canvas.width = window.innerWidth;
+                var h = canvas.height = window.innerHeight;
+                var pts = [];
+                window.addEventListener('resize', function() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; });
+                for (var i=0; i<25; i++) {
+                    pts.push({ x: Math.random()*w, y: Math.random()*h, vx: (Math.random()-0.5)*0.35, vy: (Math.random()-0.5)*0.35, r: Math.random()*1.5+0.8 });
+                }
+                function anim() {
+                    ctx.clearRect(0,0,w,h);
+                    ctx.fillStyle = 'rgba(56,189,248,0.35)';
+                    for (var i=0; i<pts.length; i++) {
+                        var p = pts[i];
+                        p.x += p.vx; p.y += p.vy;
+                        if (p.x < 0 || p.x > w) p.vx *= -1;
+                        if (p.y < 0 || p.y > h) p.vy *= -1;
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+                        ctx.fill();
+                    }
+                    requestAnimationFrame(anim);
+                }
+                anim();
+            }
+        })();
+    </script>
+
+</body></html>
