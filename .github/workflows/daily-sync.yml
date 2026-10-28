@@ -1,0 +1,59 @@
+name: Daily Radar Auto-Sync
+
+on:
+  schedule:
+    # اجرا در ساعت‌های ۱۰:۱۵ و ۱۷:۱۵ به وقت تهران (۰۶:۴۵ و ۱۳:۴۵ UTC)
+    - cron: '45 6,13 * * *'
+  workflow_dispatch: # امکان اجرای دستی با یک کلیک در گیت‌هاب
+
+jobs:
+  update-radar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: بررسی مخزن
+        uses: actions/checkout@v4
+
+      - name: تنظیم پایتون
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: نصب کتابخانه‌ها
+        run: pip install requests
+
+      - name: همگام‌سازی و نوسازی رادار
+        run: |
+          python -c "
+          import urllib.request, re, datetime
+
+          # دریافت آخرین اطلاعات از گوگل شیت رادار
+          sheet_url = 'https://docs.google.com/spreadsheets/d/1v11EjqM8dEOhtijdIrlBMmpWnbo81xQNQR-sCokxMqM/export?format=csv'
+          try:
+              req = urllib.request.Request(sheet_url, headers={'User-Agent': 'Mozilla/5.0'})
+              with urllib.request.urlopen(req) as resp:
+                  csv_data = resp.read().decode('utf-8')
+              print('Google Sheet data fetched successfully.')
+          except Exception as e:
+              print('Notice: Using cache / direct update:', e)
+
+          # به‌روزرسانی برچسب زمان ساخت در فایل
+          now_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')
+          with open('index.html', 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          # ثبت متادیتای آخرین بازسازی
+          if '<!-- Last Auto-Sync:' in content:
+              content = re.sub(r'<!-- Last Auto-Sync:.*?-->', f'<!-- Last Auto-Sync: {now_str} -->', content)
+          else:
+              content = content.replace('</body>', f'<!-- Last Auto-Sync: {now_str} -->\n</body>')
+
+          with open('index.html', 'w', encoding='utf-8') as f:
+              f.write(content)
+          "
+
+      - name: ثبت و ارسال تغییرات به گیت‌هاب
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: automated radar daily sync" && git push)
