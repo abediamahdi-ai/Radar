@@ -156,19 +156,30 @@
             position: relative;
             z-index: 2;
             display: grid;
-            grid-template-columns: 270px 1fr;
+            grid-template-columns: 280px 1fr;
             min-height: 100vh;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        @media (max-width: 1060px) {
-            .app-shell { grid-template-columns: 1fr; }
+        .app-shell.sidebar-collapsed {
+            grid-template-columns: 0px 1fr;
+        }
+
+        .app-shell.sidebar-collapsed .app-sidebar {
+            transform: translateX(100%);
+            border-left: none;
+            padding: 0;
+            overflow: hidden;
+            width: 0;
+            pointer-events: none;
+            opacity: 0;
         }
 
          
         .app-sidebar {
             background: var(--bg-sidebar);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             border-left: 1px solid var(--border-subtle);
             padding: 20px 16px;
             display: flex;
@@ -179,14 +190,82 @@
             top: 0;
             height: 100vh;
             overflow-y: auto;
+            z-index: 100;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), width 0.3s ease, padding 0.3s ease, opacity 0.25s ease;
         }
 
+         
+        .sidebar-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 7, 15, 0.72);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 95;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .sidebar-backdrop.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .drawer-close-btn { display: none; }
+
+        .btn-menu {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-active);
+            color: var(--cyan);
+            box-shadow: 0 2px 10px rgba(56, 189, 248, 0.15);
+            font-size: 0.8rem;
+            padding: 7px 13px;
+        }
+        .btn-menu:hover {
+            background: var(--cyan-soft);
+            color: var(--text-primary);
+        }
+
+         
         @media (max-width: 1060px) {
+            .app-shell {
+                grid-template-columns: 1fr !important;
+            }
+
             .app-sidebar {
-                position: static;
-                height: auto;
-                border-left: none;
-                border-bottom: 1px solid var(--border-subtle);
+                position: fixed !important;
+                top: 0 !important;
+                right: 0 !important;
+                width: 290px !important;
+                max-width: 86vw !important;
+                height: 100vh !important;
+                box-shadow: -15px 0 45px rgba(0, 0, 0, 0.75) !important;
+                border-left: 1px solid var(--border-active) !important;
+                border-bottom: none !important;
+                transform: translateX(105%) !important;
+                transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+                z-index: 110 !important;
+            }
+
+            .app-sidebar.drawer-open {
+                transform: translateX(0) !important;
+            }
+
+            .drawer-close-btn {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-telemetry {
+                display: flex !important;
+            }
+
+            .nav-menu {
+                flex-direction: column !important;
             }
         }
 
@@ -274,9 +353,7 @@
          
         .nav-menu { display: flex; flex-direction: column; gap: 6px; }
 
-        @media (max-width: 1060px) {
-            .nav-menu { flex-direction: row; flex-wrap: wrap; }
-        }
+ 
 
         .nav-btn {
             width: 100%;
@@ -297,9 +374,7 @@
             text-align: right;
         }
 
-        @media (max-width: 1060px) {
-            .nav-btn { width: auto; flex: 1 1 auto; }
-        }
+ 
 
         .nav-btn-left { display: flex; align-items: center; gap: 9px; }
         .nav-btn:hover { background: var(--bg-elevated); color: var(--text-primary); transform: translateX(-3px); }
@@ -329,9 +404,7 @@
             gap: 8px;
         }
 
-        @media (max-width: 1060px) {
-            .sidebar-telemetry { display: none; }
-        }
+ 
 
         .telemetry-row {
             display: flex;
@@ -647,6 +720,8 @@
             white-space: nowrap;
         }
         .agenda-name { font-size: 0.85rem; font-weight: 800; }
+        .agenda-link { color: inherit; text-decoration: none; transition: color 0.18s ease; display: inline-flex; align-items: center; gap: 4px; }
+        .agenda-link:hover { color: var(--cyan); text-decoration: underline; }
         .agenda-meta { font-size: 0.71rem; color: var(--text-muted); margin-top: 1px; }
 
          
@@ -764,7 +839,7 @@
             inset: 0;
             background: rgba(4, 7, 15, 0.78);
             backdrop-filter: blur(8px);
-            z-index: 100;
+            z-index: 9999;
             display: none;
             align-items: center;
             justify-content: center;
@@ -802,10 +877,51 @@
             transition: all 0.25s ease;
         }
         .toast-box.show { opacity: 1; transform: translateY(0); }
+
+         
+        .floating-menu-btn {
+            display: none;
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            z-index: 90;
+            background: linear-gradient(135deg, #0284c7, #4f46e5);
+            color: #ffffff;
+            border: 1px solid var(--border-active);
+            border-radius: 999px;
+            padding: 11px 20px;
+            font-family: var(--font-sans);
+            font-size: 0.84rem;
+            font-weight: 800;
+            box-shadow: 0 10px 28px rgba(2, 132, 199, 0.45);
+            cursor: pointer;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .floating-menu-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(2, 132, 199, 0.6);
+        }
+
+        @media (max-width: 1060px) {
+            .floating-menu-btn {
+                display: flex !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-category-tabs {
+                display: none !important;
+            }
+        }
+
     </style>
 </head>
 <body>
     <canvas id="bgCanvas" width="1855" height="908"></canvas>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
 
     <div class="app-shell">
 
@@ -813,17 +929,20 @@
         <aside class="app-sidebar">
             <div style="display:flex; flex-direction:column; gap:16px;">
                 <div class="brand-box">
-                    <div class="brand-radar-mini">
-                        <div class="brand-radar-sweep"></div>
-                        <div class="brand-radar-dot"></div>
-                    </div>
-                    <div>
-                        <div class="brand-title">Dr.Mahdi Radar</div>
-                        <div class="brand-sub">
-                            <span class="pulse-dot"></span>
-                            <span class="mono">abedi.a.mahdi@gmail.com</span>
+                    <div style="display:flex; align-items:center; gap:12px; flex:1;">
+                        <div class="brand-radar-mini">
+                            <div class="brand-radar-sweep"></div>
+                            <div class="brand-radar-dot"></div>
+                        </div>
+                        <div>
+                            <div class="brand-title">Dr.Mahdi Radar</div>
+                            <div class="brand-sub">
+                                <span class="pulse-dot"></span>
+                                <span class="mono">abedi.a.mahdi@gmail.com</span>
+                            </div>
                         </div>
                     </div>
+                    <button type="button" class="btn-action drawer-close-btn" id="closeSidebarBtn" title="بستن منو" style="padding:4px 9px; font-size:0.85rem; border-radius:9px; cursor:pointer;">✕</button>
                 </div>
 
                 
@@ -845,11 +964,11 @@
 
                 
                 <nav class="nav-menu" id="sideNav">
-                    <button type="button" class="nav-btn" data-tab="tab-today">
+                    <button type="button" class="nav-btn active" data-tab="tab-today">
                         <span class="nav-btn-left"><span>⚡</span><span>برنامه امروز و فردا</span></span>
                         <span class="nav-badge num-fa">۴ جلسه</span>
                     </button>
-                    <button type="button" class="nav-btn active" data-tab="tab-week">
+                    <button type="button" class="nav-btn" data-tab="tab-week">
                         <span class="nav-btn-left"><span>🗓️</span><span>برنامه کل هفته (۷ روز)</span></span>
                         <span class="nav-badge num-fa" id="sideWeekBadge">۱۱</span>
                     </button>
@@ -879,7 +998,7 @@
                 </div>
                 <div class="telemetry-row">
                     <span style="color:var(--text-muted);">تا آپدیت بعدی:</span>
-                    <span class="mono" style="font-weight:900; color:var(--cyan); font-size:0.92rem; letter-spacing:1px;" id="nextSyncCountdown">۰۵:۵۵:۲۹</span>
+                    <span class="mono" style="font-weight:900; color:var(--cyan); font-size:0.92rem; letter-spacing:1px;" id="nextSyncCountdown">۰۱:۲۵:۱۷</span>
                 </div>
             </div>
         </aside>
@@ -891,11 +1010,17 @@
             <header class="app-topbar">
                 <div class="topbar-right">
                     
+                    <button type="button" class="btn-action btn-menu" id="menuToggleBtn" title="باز و بسته‌کردن منوی سایدبار">
+                        <span style="font-size:1.15rem; line-height:1;">☰</span>
+                        <span style="font-weight:800;">منوی رادار</span>
+                    </button>
+
+                    
                     <div class="top-category-tabs" id="topTabs">
-                        <button type="button" class="cat-tab-btn" data-tab="tab-today">
+                        <button type="button" class="cat-tab-btn active" data-tab="tab-today">
                             <span>⚡</span><span>امروز و فردا</span>
                         </button>
-                        <button type="button" class="cat-tab-btn active" data-tab="tab-week">
+                        <button type="button" class="cat-tab-btn" data-tab="tab-week">
                             <span>🗓️</span><span>کل هفته</span>
                         </button>
                         <button type="button" class="cat-tab-btn" data-tab="tab-insights">
@@ -911,7 +1036,7 @@
 
                     <div class="live-clock-chip">
                         <span>🇮🇷</span>
-                        <span id="liveTehranClock" style="color:var(--cyan); font-weight:900;">۱۱:۰۴:۳۱</span>
+                        <span id="liveTehranClock" style="color:var(--cyan); font-weight:900;">۱۵:۳۴:۴۳</span>
                         <span style="color:var(--text-muted);">|</span>
                         <span id="liveJalaliDate">۶ آبان ۱۴۰۵</span>
                     </div>
@@ -972,7 +1097,7 @@
                 </div>
 
                 
-                <div class="tab-content-view" id="tab-today">
+                <div class="tab-content-view active-tab-view" id="tab-today">
                     <div class="dashboard-card">
                         <div class="card-head">
                             <div class="card-head-left">
@@ -1019,13 +1144,13 @@
                         
                         <div style="display:flex; flex-direction:column; gap:8px;">
                             <div style="font-size:0.8rem; font-weight:800; color:var(--text-muted);" id="todayAgendaTitle">لیست جلسات چهارشنبه 6 آبان (امروز):</div>
-                            <div class="agenda-items" id="todayAgendaList"><div class="agenda-row" data-open="ev9"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۳۰</span><div><div class="agenda-name">جلسه آقای عابدی با خانم حبیبی</div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev11"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۳۰</span><div><div class="agenda-name">جلسه آقای عابدی با آقای رجبی</div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه ماهانه آرتین</span></div></div><div class="agenda-row" data-open="ev12"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name">جلسه ماهانه مدیر سرمایه انسانی با مدیر اجرایی آرتین</div><div class="agenda-meta">چهارشنبه ۶ آبان • دفتر آرتین</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه آقای رجبی</span></div></div><div class="agenda-row" data-open="ev13"><div class="agenda-left"><span class="time-box num-fa">۱۶:۰۰ – ۱۷:۳۰</span><div><div class="agenda-name">جلسه آقای عابدی با آقای اسفندیاری</div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div></div>
+                            <div class="agenda-items" id="todayAgendaList"><div class="agenda-row" data-open="ev9"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NG44OW8wZ2dmZWZvN2E2Ym5xYTltbTAzcXEgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با خانم حبیبی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev11"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NmFscnZocTQ0ZzJ1bmppZmNvb2JhMmc4amwgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با آقای رجبی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه ماهانه آرتین</span></div></div><div class="agenda-row" data-open="ev12"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NzlmZm10dmowZW4zb3BsajM4MWh1M2JnOGJfMjAyNjEwMjhUMDczMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه ماهانه مدیر سرمایه انسانی با مدیر اجرایی آرتین <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • دفتر آرتین</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه آقای رجبی</span></div></div><div class="agenda-row" data-open="ev13"><div class="agenda-left"><span class="time-box num-fa">۱۶:۰۰ – ۱۷:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MHU1aWY0b3F1bWUzaGg2czFuY2ZlNTU4cmkgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با آقای اسفندیاری <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div></div>
                         </div>
                     </div>
                 </div>
 
                 
-                <div class="tab-content-view active-tab-view" id="tab-week">
+                <div class="tab-content-view" id="tab-week">
                     <div class="dashboard-card">
                         <div class="card-head">
                             <div class="card-head-left">
@@ -1072,10 +1197,10 @@
                         
                         <div style="display:flex; flex-direction:column; gap:8px;">
                             <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-size:0.8rem; font-weight:800; color:var(--text-muted);" id="weekAgendaLabel">نمایش همه جلسات شخصی من (۱۱ جلسه):</span>
+                                <span style="font-size:0.8rem; font-weight:800; color:var(--text-muted);" id="weekAgendaLabel">نمایش همه جلسات (۱۱ جلسه):</span>
                                 <button type="button" class="btn-action" id="showAllWeekBtn" style="font-size:0.72rem; padding:4px 10px;">نمایش همه</button>
                             </div>
-                            <div class="agenda-items" id="weekAgendaList"><div class="agenda-row" data-open="ev0"><div class="agenda-left"><span class="time-box num-fa">۰۷:۴۵ – ۱۰:۰۰</span><div><div class="agenda-name">جلسه شورای مدیران ارشد سازمان</div><div class="agenda-meta">سه‌شنبه ۵ آبان • طبقه هفتم جنوبی</div></div></div><div><span class="pill-badge pill-amber">🚩 مهم</span><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev2"><div class="agenda-left"><span class="time-box num-fa">۱۰:۱۵ – ۱۱:۴۵</span><div><div class="agenda-name">جلسه آقای عابدی با آقای مومنی</div><div class="agenda-meta">سه‌شنبه ۵ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev5"><div class="agenda-left"><span class="time-box num-fa">۱۲:۰۰ – ۱۳:۰۰</span><div><div class="agenda-name">جلسه هفتگی پیگیری جذب</div><div class="agenda-meta">سه‌شنبه ۵ آبان • اتاق جلسه HR</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev6"><div class="agenda-left"><span class="time-box num-fa">۱۴:۰۰ – ۱۵:۳۰</span><div><div class="agenda-name">جلسه با خانم طالش‌پور</div><div class="agenda-meta">سه‌شنبه ۵ آبان • Google Meet</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev9"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۳۰</span><div><div class="agenda-name">جلسه آقای عابدی با خانم حبیبی</div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev11"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۳۰</span><div><div class="agenda-name">جلسه آقای عابدی با آقای رجبی</div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه ماهانه آرتین</span></div></div><div class="agenda-row" data-open="ev12"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name">جلسه ماهانه مدیر سرمایه انسانی با مدیر اجرایی آرتین</div><div class="agenda-meta">چهارشنبه ۶ آبان • دفتر آرتین</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه آقای رجبی</span></div></div><div class="agenda-row" data-open="ev13"><div class="agenda-left"><span class="time-box num-fa">۱۶:۰۰ – ۱۷:۳۰</span><div><div class="agenda-name">جلسه آقای عابدی با آقای اسفندیاری</div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev14"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۰۰</span><div><div class="agenda-name">جلسه آقای عابدی با آقای علیرضا یزدی</div><div class="agenda-meta">شنبه ۹ آبان • دفتر مرکزی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev15"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۳:۰۰</span><div><div class="agenda-name">جلسه ارتقا سرکار خانم گلشن افضلی</div><div class="agenda-meta">شنبه ۹ آبان • دفتر مرکزی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev16"><div class="agenda-left"><span class="time-box num-fa">۱۰:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name">کمیته منابع و مصارف</div><div class="agenda-meta">یکشنبه ۱۰ آبان • طبقه هفتم جنوبی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div></div>
+                            <div class="agenda-items" id="weekAgendaList"><div class="agenda-row" data-open="ev0"><div class="agenda-left"><span class="time-box num-fa">۰۷:۴۵ – ۱۰:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=c2ZsbDBmM3A0dnF0M3Y3dHB0MGY5bGUxYnNfMjAyNjEwMjdUMDQxNTAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه شورای مدیران ارشد سازمان <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">سه‌شنبه ۵ آبان • طبقه هفتم جنوبی</div></div></div><div><span class="pill-badge pill-amber">🚩 مهم</span><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev2"><div class="agenda-left"><span class="time-box num-fa">۱۰:۱۵ – ۱۱:۴۵</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NmE0aTgyb2lkaWc3OGFoZ3R0bGRrYzZ2YzYgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با آقای مومنی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">سه‌شنبه ۵ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev5"><div class="agenda-left"><span class="time-box num-fa">۱۲:۰۰ – ۱۳:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MzZlcmxuMWJ1Mjc4ZnNpbjdxM2ttdHZwZmogMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه هفتگی پیگیری جذب <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">سه‌شنبه ۵ آبان • اتاق جلسه HR</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev6"><div class="agenda-left"><span class="time-box num-fa">۱۴:۰۰ – ۱۵:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MjhobHU4cmRidm9jNG5nM2R1am51MzQ1c2ggMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه با خانم طالش‌پور <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">سه‌شنبه ۵ آبان • Google Meet</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev9"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NG44OW8wZ2dmZWZvN2E2Ym5xYTltbTAzcXEgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با خانم حبیبی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev11"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NmFscnZocTQ0ZzJ1bmppZmNvb2JhMmc4amwgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با آقای رجبی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه ماهانه آرتین</span></div></div><div class="agenda-row" data-open="ev12"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NzlmZm10dmowZW4zb3BsajM4MWh1M2JnOGJfMjAyNjEwMjhUMDczMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه ماهانه مدیر سرمایه انسانی با مدیر اجرایی آرتین <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • دفتر آرتین</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه آقای رجبی</span></div></div><div class="agenda-row" data-open="ev13"><div class="agenda-left"><span class="time-box num-fa">۱۶:۰۰ – ۱۷:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MHU1aWY0b3F1bWUzaGg2czFuY2ZlNTU4cmkgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با آقای اسفندیاری <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev14"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MWMxZWtmZzExMDVvNDI2ajRlanBsbDVsNHMgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با آقای علیرضا یزدی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • دفتر مرکزی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev15"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۳:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=M3JnNnFnN2djcnMxdHBvazByMms4bW5lcmQgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه ارتقا سرکار خانم گلشن افضلی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • دفتر مرکزی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev16"><div class="agenda-left"><span class="time-box num-fa">۱۰:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=M2RrbmEzcmJwMnVlYWU3Z2lhcGlldW9tc2lfMjAyNjExMDFUMDYzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">کمیته منابع و مصارف <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">یکشنبه ۱۰ آبان • طبقه هفتم جنوبی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div></div>
                         </div>
                     </div>
                 </div>
@@ -1463,6 +1588,12 @@
         </div>
     </div>
 
+        
+    <button type="button" class="floating-menu-btn" id="floatingMenuBtn" title="باز کردن منوی رادار">
+        <span style="font-size:1.2rem; line-height:1;">☰</span>
+        <span>منوی رادار</span>
+    </button>
+
     <div class="toast-box" id="appToast">✅ با موفقیت انجام شد</div>
 
     <script>
@@ -1653,11 +1784,12 @@
                 else b += '<span class="pill-badge pill-emerald">بدون تداخل</span>';
                 if (savedNotes[it.id]) b += '<span class="pill-badge pill-cyan">📝 یادداشت</span>';
 
+                var calLink = it.url ? '<a href="' + it.url + '" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">' + it.title + ' <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a>' : it.title;
                 return '<div class="agenda-row" data-open="' + it.id + '">' +
                     '<div class="agenda-left">' +
                     '<span class="time-box num-fa">' + fmtNum(it.time) + '</span>' +
                     '<div>' +
-                    '<div class="agenda-name">' + it.title + '</div>' +
+                    '<div class="agenda-name">' + calLink + '</div>' +
                     '<div class="agenda-meta">' + it.jalali + ' • ' + it.loc + (savedNotes[it.id] ? ' • 📝 ' + savedNotes[it.id] : '') + '</div>' +
                     '</div></div>' +
                     '<div>' + b + '</div>' +
@@ -1810,6 +1942,51 @@
                 renderAgendas(targetDay);
             }
 
+            var weekFilterDay = null; 
+
+            function bindAgendaRowClicks() {
+                var rows = document.querySelectorAll('.agenda-row[data-open]');
+                for (var r=0; r<rows.length; r++) {
+                    rows[r].removeEventListener('click', handleRowClick);
+                    rows[r].addEventListener('click', handleRowClick);
+                }
+            }
+
+            function handleRowClick() {
+                var evId = this.getAttribute('data-open');
+                if (evId) openModal(evId);
+            }
+
+            function renderWeekAgenda(dayToFilter) {
+                weekFilterDay = dayToFilter || null;
+                var scoped = getScopedList();
+                var items = [];
+                var labelEl = document.getElementById('weekAgendaLabel');
+                var countBadge = document.getElementById('weekCountBadge');
+
+                if (!weekFilterDay || weekFilterDay === 'all') {
+                    items = scoped;
+                    if (labelEl) labelEl.textContent = 'نمایش همه جلسات (' + fmtNum(scoped.length) + ' جلسه):';
+                } else {
+                    items = scoped.filter(function(e) { return e.date === weekFilterDay; });
+                    var sample = items[0];
+                    var dayName = sample ? sample.jalali : weekFilterDay;
+                    if (labelEl) labelEl.textContent = 'نمایش جلسات ' + dayName + ' (' + fmtNum(items.length) + ' جلسه):';
+                }
+
+                var weekEl = document.getElementById('weekAgendaList');
+                if (weekEl) {
+                    if (items.length === 0) {
+                        weekEl.innerHTML = '<div class="agenda-row"><div class="agenda-name" style="color:var(--text-muted);">جلسه‌ای برای این روز ثبت نشده است (روز آزاد / تمرکز کاری ✨).</div></div>';
+                    } else {
+                        var hw = '';
+                        for (var k=0; k<items.length; k++) hw += makeItemHtml(items[k]);
+                        weekEl.innerHTML = hw;
+                    }
+                }
+                bindAgendaRowClicks();
+            }
+
             function renderAgendas(filterDay) {
                 var tInfo = getTehranInfo();
                 var scoped = getScopedList();
@@ -1839,20 +2016,8 @@
                 }
 
                 
-                var weekEl = document.getElementById('weekAgendaList');
-                if (weekEl) {
-                    var hw = '';
-                    for (var k=0; k<scoped.length; k++) hw += makeItemHtml(scoped[k]);
-                    weekEl.innerHTML = hw;
-                }
-
-                
-                var rows = document.querySelectorAll('.agenda-row[data-open]');
-                for (var r=0; r<rows.length; r++) {
-                    rows[r].addEventListener('click', function() {
-                        openModal(this.getAttribute('data-open'));
-                    });
-                }
+                renderWeekAgenda(weekFilterDay);
+                bindAgendaRowClicks();
             }
             syncDynamicUI();
 
@@ -1950,6 +2115,45 @@
                 modal.classList.add('open');
             }
 
+            
+            
+            var weekBarCols = document.querySelectorAll('.v-bar-col[data-col-day]');
+            for (var wbc = 0; wbc < weekBarCols.length; wbc++) {
+                weekBarCols[wbc].addEventListener('click', function() {
+                    var clickedDay = this.getAttribute('data-col-day');
+                    for (var x = 0; x < weekBarCols.length; x++) weekBarCols[x].classList.remove('selected-col');
+                    this.classList.add('selected-col');
+                    renderWeekAgenda(clickedDay);
+                    var scoped = getScopedList();
+                    var dayCount = scoped.filter(function(e) { return e.date === clickedDay; }).length;
+                    showToast('🗓️ فیلتر جلسات: ' + fmtNum(dayCount) + ' جلسه');
+                });
+            }
+
+            
+            safeOn('showAllWeekBtn', 'click', function() {
+                for (var x = 0; x < weekBarCols.length; x++) weekBarCols[x].classList.remove('selected-col');
+                renderWeekAgenda(null);
+                showToast('📋 نمایش تمام جلسات کل هفته');
+            });
+
+            
+            var ganttBlocks = document.querySelectorAll('.gantt-item[data-ev-id]');
+            for (var gbi = 0; gbi < ganttBlocks.length; gbi++) {
+                ganttBlocks[gbi].addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var evId = this.getAttribute('data-ev-id');
+                    if (evId) openModal(evId);
+                });
+            }
+
+            
+            safeOn('meetingModal', 'click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('open');
+                }
+            });
+
             safeOn('closeModalBtn', 'click', function() {
                 modal.classList.remove('open');
             });
@@ -1979,6 +2183,54 @@
                     }
                     this.textContent = '✅ تصمیم ثبت شد';
                     showToast('🪐 تصمیم شما در حافظه اربیت ذخیره شد');
+                });
+            }
+
+            
+            var appShell = document.querySelector('.app-shell');
+            var appSidebar = document.querySelector('.app-sidebar');
+            var sidebarBackdrop = document.getElementById('sidebarBackdrop');
+
+            function openSidebarDrawer() {
+                if (window.innerWidth <= 1060) {
+                    if (appSidebar) appSidebar.classList.add('drawer-open');
+                    if (sidebarBackdrop) sidebarBackdrop.classList.add('active');
+                } else {
+                    if (appShell) appShell.classList.toggle('sidebar-collapsed');
+                }
+            }
+
+            function closeSidebarDrawer() {
+                if (appSidebar) appSidebar.classList.remove('drawer-open');
+                if (sidebarBackdrop) sidebarBackdrop.classList.remove('active');
+            }
+
+            safeOn('floatingMenuBtn', 'click', function() {
+                openSidebarDrawer();
+            });
+
+            safeOn('menuToggleBtn', 'click', function() {
+                if (window.innerWidth <= 1060) {
+                    if (appSidebar && appSidebar.classList.contains('drawer-open')) {
+                        closeSidebarDrawer();
+                    } else {
+                        openSidebarDrawer();
+                    }
+                } else {
+                    if (appShell) appShell.classList.toggle('sidebar-collapsed');
+                }
+            });
+
+            safeOn('closeSidebarBtn', 'click', closeSidebarDrawer);
+            safeOn('sidebarBackdrop', 'click', closeSidebarDrawer);
+
+            
+            var sideNavBtns = document.querySelectorAll('#sideNav .nav-btn');
+            for (var snb = 0; snb < sideNavBtns.length; snb++) {
+                sideNavBtns[snb].addEventListener('click', function() {
+                    if (window.innerWidth <= 1060) {
+                        closeSidebarDrawer();
+                    }
                 });
             }
 
