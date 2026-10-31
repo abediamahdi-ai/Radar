@@ -920,7 +920,7 @@
     </style>
 </head>
 <body>
-    <canvas id="bgCanvas" width="1855" height="908"></canvas>
+    <canvas id="bgCanvas" width="1855" height="1108"></canvas>
     <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
 
     <div class="app-shell">
@@ -950,7 +950,7 @@
                     <div style="font-size:0.7rem; font-weight:800; color:var(--text-muted); padding:0 2px;">🎯 تفکیک جلسات تقویم:</div>
                     <button type="button" class="scope-btn active" data-scope="mine">
                         <span>👤 فقط جلسات خودم</span>
-                        <span class="num-fa" style="font-weight:900;">۱۱ جلسه</span>
+                        <span class="num-fa" style="font-weight:900;">۸ جلسه</span>
                     </button>
                     <button type="button" class="scope-btn" data-scope="team">
                         <span>👥 جلسات تیم (بدون من)</span>
@@ -966,7 +966,7 @@
                 <nav class="nav-menu" id="sideNav">
                     <button type="button" class="nav-btn active" data-tab="tab-today">
                         <span class="nav-btn-left"><span>⚡</span><span>برنامه امروز و فردا</span></span>
-                        <span class="nav-badge num-fa">۴ جلسه</span>
+                        <span class="nav-badge num-fa">۵ جلسه</span>
                     </button>
                     <button type="button" class="nav-btn" data-tab="tab-week">
                         <span class="nav-btn-left"><span>🗓️</span><span>برنامه کل هفته (۷ روز)</span></span>
@@ -994,11 +994,11 @@
                 </div>
                 <div class="telemetry-row">
                     <span style="color:var(--text-muted);">آخرین آپدیت:</span>
-                    <span style="font-weight:800; color:var(--emerald);" id="lastSyncDisplay">امروز ۱۰:۰۰</span>
+                    <span style="font-weight:800; color:var(--emerald);" id="lastSyncDisplay">دیروز ۱۷:۰۰</span>
                 </div>
                 <div class="telemetry-row">
                     <span style="color:var(--text-muted);">تا آپدیت بعدی:</span>
-                    <span class="mono" style="font-weight:900; color:var(--cyan); font-size:0.92rem; letter-spacing:1px;" id="nextSyncCountdown">۰۱:۲۵:۱۷</span>
+                    <span class="mono" style="font-weight:900; color:var(--cyan); font-size:0.92rem; letter-spacing:1px;" id="nextSyncCountdown">۰۰:۴۵:۲۶</span>
                 </div>
             </div>
         </aside>
@@ -1036,9 +1036,9 @@
 
                     <div class="live-clock-chip">
                         <span>🇮🇷</span>
-                        <span id="liveTehranClock" style="color:var(--cyan); font-weight:900;">۱۵:۳۴:۴۳</span>
+                        <span id="liveTehranClock" style="color:var(--cyan); font-weight:900;">۰۹:۱۴:۳۴</span>
                         <span style="color:var(--text-muted);">|</span>
-                        <span id="liveJalaliDate">۶ آبان ۱۴۰۵</span>
+                        <span id="liveJalaliDate">۹ آبان ۱۴۰۵</span>
                     </div>
                 </div>
 
@@ -1063,15 +1063,15 @@
                         <div>
                             <div class="kpi-title">جلسات شخصی من (۷ روز آینده)</div>
                             <div class="kpi-num num-fa" id="kpiNum1" style="color:var(--cyan);">۱۱ جلسه</div>
-                            <div class="kpi-foot">۱۶.۲۵ ساعت از ۴۲ ساعت کاری (۳۹٪)</div>
+                            <div class="kpi-foot">۱۱.۷۵ ساعت از ۴۰ ساعت کاری (۲۹٪)</div>
                         </div>
                         <span style="font-size:1.4rem;">👤</span>
                     </div>
 
                     <div class="kpi-card" data-switch-to="tab-today">
                         <div>
-                            <div class="kpi-title">وضعیت برنامهٔ امروز (۵ آبان)</div>
-                            <div class="kpi-num num-fa" style="color:var(--emerald);">۴ جلسه</div>
+                            <div class="kpi-title">سنگین‌ترین روز: شنبه ۹ آبان</div>
+                            <div class="kpi-num num-fa" style="color:var(--emerald);">۵ جلسه</div>
                             <div class="kpi-foot">کاملاً منظم و بدون هیچ تداخل زمانی ✅</div>
                         </div>
                         <span style="font-size:1.4rem;">✨</span>
@@ -1081,7 +1081,7 @@
                         <div>
                             <div class="kpi-title">تحلیل و پیشنهادهای Orbit</div>
                             <div class="kpi-num num-fa" style="color:var(--amber);">۴ پیشنهاد</div>
-                            <div class="kpi-foot">رفع تداخل ۶ آبان + پالایش جیمیل</div>
+                            <div class="kpi-foot">۱۰۰٪ بدون تداخل زمانی + قفل کار عمیق</div>
                         </div>
                         <span style="font-size:1.4rem;">💡</span>
                     </div>
@@ -1103,18 +1103,18 @@
                             <div class="card-head-left">
                                 <div class="card-icon" style="background:var(--emerald-soft); color:var(--emerald);">⚡</div>
                                 <div>
-                                    <h2 id="tab1MainHeading">برنامه عملیاتی امروز و فردا (چهارشنبه 6 آبان و پنج‌شنبه 7 آبان)</h2>
+                                    <h2 id="tab1MainHeading">برنامه عملیاتی امروز و فردا (شنبه 9 آبان و یکشنبه 10 آبان)</h2>
                                     <p>تمرکز روی جلسات فوری، فواصل تنفس و رفع تداخل زمانی</p>
                                 </div>
                             </div>
                             <div style="display:flex; gap:6px;">
-                                <button type="button" class="btn-action" id="todayFilterBtn" style="background:var(--cyan-soft); color:var(--cyan); border-color:var(--border-active);">امروز: ۶ آبان (۴ جلسه)</button>
-                                <button type="button" class="btn-action" id="tomorrowFilterBtn">فردا: ۷ آبان (۰ جلسه)</button>
+                                <button type="button" class="btn-action" id="todayFilterBtn" style="background:var(--cyan-soft); color:var(--cyan); border-color:var(--border-active);">امروز: ۹ آبان (۵ جلسه)</button>
+                                <button type="button" class="btn-action" id="tomorrowFilterBtn">فردا: ۱۰ آبان (۱ جلسه)</button>
                             </div>
                         </div>
 
                         
-                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;" id="todayFlagsGrid"><div style="background:var(--rose-soft); border-right:4px solid var(--rose); border-radius:14px; padding:12px 14px;"><div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:800; color:var(--rose);"><span>⚠️ گره زمانی امروز (نیاز به اقدام)</span><span class="pill-badge pill-rose">امروز ۱۱:۰۰</span></div><div style="font-size:0.86rem; font-weight:800; margin-top:4px;">همپوشانی جلسه آقای رجبی با جلسه ماهانه آرتین</div><div style="font-size:0.73rem; color:var(--text-secondary); margin-top:2px;">پیشنهاد: انتقال جلسه آقای رجبی به ساعت ۱۴:۰۰ عصر امروز چهارشنبه</div></div><div style="background:var(--cyan-soft); border-right:4px solid var(--cyan); border-radius:14px; padding:12px 14px;"><div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:800; color:var(--cyan);"><span>🧠 چشم‌انداز فردا (پنج‌شنبه)</span><span class="pill-badge pill-cyan">روز آزاد</span></div><div style="font-size:0.86rem; font-weight:800; margin-top:4px;">فردا (پنج‌شنبه 7 آبان) جلسه‌ای ثبت نشده است</div><div style="font-size:0.73rem; color:var(--text-secondary); margin-top:2px;">فرصت عالی برای کار عمیق استراتژیک، پیگیری ارزیابی‌ها و پالایش ایمیل‌ها</div></div></div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;" id="todayFlagsGrid"><div style="background:var(--emerald-soft); border-right:4px solid var(--emerald); border-radius:14px; padding:12px 14px;"><div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:800; color:var(--emerald);"><span>✨ وضعیت برنامه امروز</span><span class="pill-badge pill-emerald">۵ جلسه</span></div><div style="font-size:0.86rem; font-weight:800; margin-top:4px;">برنامه منظم و بدون تداخل زمانی شخصی</div><div style="font-size:0.73rem; color:var(--text-secondary); margin-top:2px;">تمامی جلسات دارای زمان‌بندی شفاف و بافر کافی هستند.</div></div><div style="background:var(--amber-soft); border-right:4px solid var(--amber); border-radius:14px; padding:12px 14px;"><div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:800; color:var(--amber);"><span>🗓️ برنامه فردا (یکشنبه)</span><span class="pill-badge pill-amber">۱ جلسه</span></div><div style="font-size:0.86rem; font-weight:800; margin-top:4px;">فردا: ۱ جلسه در تقویم شما ثبت است</div><div style="font-size:0.73rem; color:var(--text-secondary); margin-top:2px;">بدون تداخل زمانی ✅</div></div></div>
 
                         
                         <div class="gantt-card">
@@ -1128,23 +1128,23 @@
                             </div>
                             <div class="gantt-tracks">
                                 <div class="gantt-row">
-                                    <div class="gantt-item" data-ev-id="ev0" style="left:2.5%; width:22.5%; background:linear-gradient(90deg,#f59e0b,#d97706);">۵ آبان: 🚩 شورای مدیران ارشد (۰۷:۴۵-۱۰)</div>
-                                    <div class="gantt-item" data-ev-id="ev2" style="left:27.5%; width:15%; background:linear-gradient(90deg,#10b981,#059669);">آقای مومنی (۱۰:۱۵-۱۱:۴۵)</div>
-                                    <div class="gantt-item" data-ev-id="ev5" style="left:45%; width:10%; background:linear-gradient(90deg,#0284c7,#4f46e5);">پیگیری جذب (۱۲-۱۳)</div>
-                                    <div class="gantt-item" data-ev-id="ev6" style="left:65%; width:15%; background:linear-gradient(90deg,#0284c7,#6366f1);">خانم طالش‌پور (۱۴-۱۵:۳۰)</div>
+                                    <div class="gantt-item" data-ev-id="ev0" style="left:5%; width:10%; background:linear-gradient(90deg,#10b981,#059669);">شنبه: جذب (۰۸-۰۹)</div>
+                                    <div class="gantt-item" data-ev-id="ev1" style="left:15%; width:10%; background:linear-gradient(90deg,#0284c7,#4f46e5);">یزدی (۰۹-۱۰)</div>
+                                    <div class="gantt-item" data-ev-id="ev2" style="left:35%; width:15%; background:linear-gradient(90deg,#6366f1,#8b5cf6);">اسفندیاری (۱۱-۱۲:۳۰)</div>
+                                    <div class="gantt-item" data-ev-id="ev4" style="left:70%; width:10%; background:linear-gradient(90deg,#f59e0b,#d97706);">نماینده بیمه (۱۴:۳۰-۱۵:۳۰)</div>
+                                    <div class="gantt-item" data-ev-id="ev5" style="left:80%; width:15%; background:linear-gradient(90deg,#059669,#10b981);">رجبی (۱۵:۳۰-۱۷)</div>
                                 </div>
                                 <div class="gantt-row">
-                                    <div class="gantt-item" data-ev-id="ev9" style="left:15%; width:15%; background:linear-gradient(90deg,#10b981,#059669);">۶ آبان: خانم حبیبی (۰۹-۱۰:۳۰)</div>
-                                    <div class="gantt-item" data-ev-id="ev11" style="left:35%; width:15%; background:linear-gradient(90deg,#f43f5e,#e11d48);">⚠️ آقای رجبی + ماهانه آرتین (۱۱-۱۲:۳۰)</div>
-                                    <div class="gantt-item" data-ev-id="ev13" style="left:85%; width:13%; background:linear-gradient(90deg,#0284c7,#4f46e5);">آقای اسفندیاری (۱۶-۱۷:۳۰)</div>
+                                    <div class="gantt-item" data-ev-id="ev8" style="left:25%; width:20%; background:linear-gradient(90deg,#0284c7,#6366f1);">یکشنبه: کمیته منابع (۱۰-۱۲)</div>
+                                    <div class="gantt-item" data-ev-id="ev13" style="left:2.5%; width:22.5%; background:linear-gradient(90deg,#f59e0b,#ea580c);">۱۲ آبان: 🚩 شورای ارشد (۰۷:۴۵-۱۰)</div>
                                 </div>
                             </div>
                         </div>
 
                         
                         <div style="display:flex; flex-direction:column; gap:8px;">
-                            <div style="font-size:0.8rem; font-weight:800; color:var(--text-muted);" id="todayAgendaTitle">لیست جلسات چهارشنبه 6 آبان (امروز):</div>
-                            <div class="agenda-items" id="todayAgendaList"><div class="agenda-row" data-open="ev9"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NG44OW8wZ2dmZWZvN2E2Ym5xYTltbTAzcXEgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با خانم حبیبی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev11"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NmFscnZocTQ0ZzJ1bmppZmNvb2JhMmc4amwgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با آقای رجبی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه ماهانه آرتین</span></div></div><div class="agenda-row" data-open="ev12"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NzlmZm10dmowZW4zb3BsajM4MWh1M2JnOGJfMjAyNjEwMjhUMDczMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه ماهانه مدیر سرمایه انسانی با مدیر اجرایی آرتین <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • دفتر آرتین</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه آقای رجبی</span></div></div><div class="agenda-row" data-open="ev13"><div class="agenda-left"><span class="time-box num-fa">۱۶:۰۰ – ۱۷:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MHU1aWY0b3F1bWUzaGg2czFuY2ZlNTU4cmkgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با آقای اسفندیاری <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div></div>
+                            <div style="font-size:0.8rem; font-weight:800; color:var(--text-muted);" id="todayAgendaTitle">لیست جلسات شنبه 9 آبان (امروز):</div>
+                            <div class="agenda-items" id="todayAgendaList"><div class="agenda-row" data-open="ev0"><div class="agenda-left"><span class="time-box num-fa">۰۸:۰۰ – ۰۹:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MTc1ZmtkbGExamR0aG10dHAwcDc3a2ViczZfMjAyNjEwMzFUMDQzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه هفتگی جذب <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • اتاق جلسات واحد سرمایه انسانی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev1"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MWMxZWtmZzExMDVvNDI2ajRlanBsbDVsNHMgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه با آقای علیرضا یزدی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • دفتر مرکزی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev2"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MHU1aWY0b3F1bWUzaGg2czFuY2ZlNTU4cmkgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه با آقای اسفندیاری <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev4"><div class="agenda-left"><span class="time-box num-fa">۱۴:۳۰ – ۱۵:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=Nms5anVwY2k3aG1tMXZzbGlsYW0yZzY3cmQgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه نماینده بیمه با آقای اصلی‌پور <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • دفتر خانم اسکندری</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev5"><div class="agenda-left"><span class="time-box num-fa">۱۵:۳۰ – ۱۷:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NmFscnZocTQ0ZzJ1bmppZmNvb2JhMmc4amwgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه با آقای رجبی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div></div>
                         </div>
                     </div>
                 </div>
@@ -1156,40 +1156,40 @@
                             <div class="card-head-left">
                                 <div class="card-icon" style="background:var(--cyan-soft); color:var(--cyan);">🗓️</div>
                                 <div>
-                                    <h2>توزیع روزانه و برنامه ۷ روز آینده (۵ تا ۱۱ آبان ۱۴۰۵)</h2>
+                                    <h2>توزیع روزانه و برنامه ۷ روز آینده (۹ تا ۱۳ آبان ۱۴۰۵)</h2>
                                     <p>پالایش بر اساس حضور <span class="mono">abedi.a.mahdi@gmail.com</span> • کلیک روی هر ستون = فیلتر جلسات آن روز</p>
                                 </div>
                             </div>
-                            <span class="pill-badge pill-cyan num-fa" id="weekCountBadge">۱۱ جلسه شخصی</span>
+                            <span class="pill-badge pill-cyan num-fa" id="weekCountBadge">۸ جلسه شخصی</span>
                         </div>
 
                         
                         <div class="chart-stage">
                             <div class="v-bars-grid">
-                                <div class="v-bar-col" data-col-day="2026-10-27">
-                                    <span class="v-bar-count num-fa">۴ <span style="font-size:0.62rem; color:var(--text-muted);">(گذشته)</span></span>
-                                    <div class="v-bar-track"><div class="v-bar-fill" style="height: 100%; opacity: 0.38;"></div></div>
-                                    <div class="v-bar-day">سه‌شنبه<br>۵ آبان</div>
-                                </div>
-                                <div class="v-bar-col selected-col" data-col-day="2026-10-28">
-                                    <span class="v-bar-count num-fa" style="color:var(--rose);">۴ ⭐امروز</span>
+                                <div class="v-bar-col selected-col" data-col-day="2026-10-31">
+                                    <span class="v-bar-count num-fa" style="color:var(--rose);">۵ <span style="font-size:0.65rem; color:var(--cyan);">⭐امروز</span></span>
                                     <div class="v-bar-track"><div class="v-bar-fill critical" style="height: 100%;"></div></div>
-                                    <div class="v-bar-day">چهارشنبه<br>۶ آبان</div>
-                                </div>
-                                <div class="v-bar-col" data-col-day="2026-10-31">
-                                    <span class="v-bar-count num-fa" style="color:var(--cyan);">۲</span>
-                                    <div class="v-bar-track"><div class="v-bar-fill" style="height: 50%;"></div></div>
                                     <div class="v-bar-day">شنبه<br>۹ آبان</div>
                                 </div>
                                 <div class="v-bar-col" data-col-day="2026-11-01">
                                     <span class="v-bar-count num-fa" style="color:var(--cyan);">۱</span>
-                                    <div class="v-bar-track"><div class="v-bar-fill" style="height: 25%;"></div></div>
+                                    <div class="v-bar-track"><div class="v-bar-fill" style="height: 20%;"></div></div>
                                     <div class="v-bar-day">یکشنبه<br>۱۰ آبان</div>
                                 </div>
                                 <div class="v-bar-col" data-col-day="2026-11-02">
-                                    <span class="v-bar-count num-fa" style="color:var(--text-muted);">۰</span>
+                                    <span class="v-bar-count num-fa" style="color:var(--emerald);">۰ ✨آزاد</span>
                                     <div class="v-bar-track"><div class="v-bar-fill" style="height: 5%; opacity:0.25;"></div></div>
                                     <div class="v-bar-day">دوشنبه<br>۱۱ آبان</div>
+                                </div>
+                                <div class="v-bar-col" data-col-day="2026-11-03">
+                                    <span class="v-bar-count num-fa" style="color:var(--amber);">۱ 🚩شورا</span>
+                                    <div class="v-bar-track"><div class="v-bar-fill" style="height: 20%;"></div></div>
+                                    <div class="v-bar-day">سه‌شنبه<br>۱۲ آبان</div>
+                                </div>
+                                <div class="v-bar-col" data-col-day="2026-11-04">
+                                    <span class="v-bar-count num-fa" style="color:var(--cyan);">۱</span>
+                                    <div class="v-bar-track"><div class="v-bar-fill" style="height: 20%;"></div></div>
+                                    <div class="v-bar-day">چهارشنبه<br>۱۳ آبان</div>
                                 </div>
                             </div>
                         </div>
@@ -1197,10 +1197,10 @@
                         
                         <div style="display:flex; flex-direction:column; gap:8px;">
                             <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-size:0.8rem; font-weight:800; color:var(--text-muted);" id="weekAgendaLabel">نمایش همه جلسات (۱۱ جلسه):</span>
+                                <span style="font-size:0.8rem; font-weight:800; color:var(--text-muted);" id="weekAgendaLabel">نمایش همه جلسات (۸ جلسه):</span>
                                 <button type="button" class="btn-action" id="showAllWeekBtn" style="font-size:0.72rem; padding:4px 10px;">نمایش همه</button>
                             </div>
-                            <div class="agenda-items" id="weekAgendaList"><div class="agenda-row" data-open="ev0"><div class="agenda-left"><span class="time-box num-fa">۰۷:۴۵ – ۱۰:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=c2ZsbDBmM3A0dnF0M3Y3dHB0MGY5bGUxYnNfMjAyNjEwMjdUMDQxNTAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه شورای مدیران ارشد سازمان <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">سه‌شنبه ۵ آبان • طبقه هفتم جنوبی</div></div></div><div><span class="pill-badge pill-amber">🚩 مهم</span><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev2"><div class="agenda-left"><span class="time-box num-fa">۱۰:۱۵ – ۱۱:۴۵</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NmE0aTgyb2lkaWc3OGFoZ3R0bGRrYzZ2YzYgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با آقای مومنی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">سه‌شنبه ۵ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev5"><div class="agenda-left"><span class="time-box num-fa">۱۲:۰۰ – ۱۳:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MzZlcmxuMWJ1Mjc4ZnNpbjdxM2ttdHZwZmogMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه هفتگی پیگیری جذب <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">سه‌شنبه ۵ آبان • اتاق جلسه HR</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev6"><div class="agenda-left"><span class="time-box num-fa">۱۴:۰۰ – ۱۵:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MjhobHU4cmRidm9jNG5nM2R1am51MzQ1c2ggMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه با خانم طالش‌پور <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">سه‌شنبه ۵ آبان • Google Meet</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev9"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NG44OW8wZ2dmZWZvN2E2Ym5xYTltbTAzcXEgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با خانم حبیبی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev11"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NmFscnZocTQ0ZzJ1bmppZmNvb2JhMmc4amwgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با آقای رجبی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه ماهانه آرتین</span></div></div><div class="agenda-row" data-open="ev12"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NzlmZm10dmowZW4zb3BsajM4MWh1M2JnOGJfMjAyNjEwMjhUMDczMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه ماهانه مدیر سرمایه انسانی با مدیر اجرایی آرتین <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • دفتر آرتین</div></div></div><div><span class="pill-badge pill-rose">⚠️ همپوشانی شخصی با جلسه آقای رجبی</span></div></div><div class="agenda-row" data-open="ev13"><div class="agenda-left"><span class="time-box num-fa">۱۶:۰۰ – ۱۷:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MHU1aWY0b3F1bWUzaGg2czFuY2ZlNTU4cmkgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با آقای اسفندیاری <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۶ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev14"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MWMxZWtmZzExMDVvNDI2ajRlanBsbDVsNHMgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه آقای عابدی با آقای علیرضا یزدی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • دفتر مرکزی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev15"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۳:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=M3JnNnFnN2djcnMxdHBvazByMms4bW5lcmQgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه ارتقا سرکار خانم گلشن افضلی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • دفتر مرکزی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev16"><div class="agenda-left"><span class="time-box num-fa">۱۰:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=M2RrbmEzcmJwMnVlYWU3Z2lhcGlldW9tc2lfMjAyNjExMDFUMDYzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">کمیته منابع و مصارف <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">یکشنبه ۱۰ آبان • طبقه هفتم جنوبی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div></div>
+                            <div class="agenda-items" id="weekAgendaList"><div class="agenda-row" data-open="ev0"><div class="agenda-left"><span class="time-box num-fa">۰۸:۰۰ – ۰۹:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MTc1ZmtkbGExamR0aG10dHAwcDc3a2ViczZfMjAyNjEwMzFUMDQzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه هفتگی جذب <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • اتاق جلسات واحد سرمایه انسانی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev1"><div class="agenda-left"><span class="time-box num-fa">۰۹:۰۰ – ۱۰:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MWMxZWtmZzExMDVvNDI2ajRlanBsbDVsNHMgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه با آقای علیرضا یزدی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • دفتر مرکزی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev2"><div class="agenda-left"><span class="time-box num-fa">۱۱:۰۰ – ۱۲:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=MHU1aWY0b3F1bWUzaGg2czFuY2ZlNTU4cmkgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه با آقای اسفندیاری <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev4"><div class="agenda-left"><span class="time-box num-fa">۱۴:۳۰ – ۱۵:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=Nms5anVwY2k3aG1tMXZzbGlsYW0yZzY3cmQgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه نماینده بیمه با آقای اصلی‌پور <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • دفتر خانم اسکندری</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev5"><div class="agenda-left"><span class="time-box num-fa">۱۵:۳۰ – ۱۷:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=NmFscnZocTQ0ZzJ1bmppZmNvb2JhMmc4amwgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه با آقای رجبی <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">شنبه ۹ آبان • طبقه چهارم</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev8"><div class="agenda-left"><span class="time-box num-fa">۱۰:۰۰ – ۱۲:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=M2RrbmEzcmJwMnVlYWU3Z2lhcGlldW9tc2lfMjAyNjExMDFUMDYzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">کمیته منابع و مصارف <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">یکشنبه ۱۰ آبان • طبقه هفتم جنوبی</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev13"><div class="agenda-left"><span class="time-box num-fa">۰۷:۴۵ – ۱۰:۰۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=c2ZsbDBmM3A0dnF0M3Y3dHB0MGY5bGUxYnNfMjAyNjExMDNUMDQxNTAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه شورای مدیران ارشد سازمان <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">سه‌شنبه ۱۲ آبان • طبقه هفتم جنوبی</div></div></div><div><span class="pill-badge pill-amber">🚩 مهم</span><span class="pill-badge pill-emerald">بدون تداخل</span></div></div><div class="agenda-row" data-open="ev16"><div class="agenda-left"><span class="time-box num-fa">۱۸:۰۰ – ۱۹:۳۰</span><div><div class="agenda-name"><a href="https://www.google.com/calendar/event?eid=b2I1YTN0ZzI4azdpYTF2Nm0xbDNibnEwdGcgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&amp;ctz=Asia/Tehran" target="_blank" class="agenda-link" onclick="event.stopPropagation()" title="باز کردن مستقیم در تقویم گوگل">جلسه ماهانه با جناب آقای مظاهری <span style="font-size:0.75rem; color:var(--cyan);">↗</span></a></div><div class="agenda-meta">چهارشنبه ۱۳ آبان • دفتر مدیریت</div></div></div><div><span class="pill-badge pill-emerald">بدون تداخل</span></div></div></div>
                         </div>
                     </div>
                 </div>
@@ -1523,10 +1523,34 @@
                                 </thead>
                                 <tbody>
                                     <tr class="today">
+                                        <td>۹ آبان ۱۴۰۵ <span class="num-fa" style="font-size:0.72rem; color:var(--cyan);">(۲۰۲۶-۱۰-۳۱)</span></td>
+                                        <td class="num-fa" style="font-weight:800; color:var(--emerald);">۸ <span style="font-size:0.7rem; color:var(--text-muted);">(از ۱۷)</span></td>
+                                        <td class="num-fa" style="font-weight:800; color:var(--cyan);">۲۰۱</td>
+                                        <td>سنگین‌ترین روز: امروز شنبه ۹ آبان (۵ جلسه شخصی) • ۱۰۰٪ بدون تداخل شخصی • پرچم مهم: شورای مدیران ارشد (۱۲ آبان)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>۸ آبان ۱۴۰۵ (نوبت عصر) <span class="num-fa" style="font-size:0.72rem; color:var(--cyan);">(۲۰۲۶-۱۰-۳۰)</span></td>
+                                        <td class="num-fa" style="font-weight:800; color:var(--emerald);">۸ <span style="font-size:0.7rem; color:var(--text-muted);">(از ۱۷)</span></td>
+                                        <td class="num-fa" style="font-weight:800; color:var(--cyan);">۲۰۱</td>
+                                        <td>سنگین‌ترین روز: شنبه ۹ آبان (۵ جلسه شخصی) • ۱۰۰٪ بدون تداخل شخصی • پرچم مهم: شورای مدیران ارشد (۱۲ آبان)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>۷ آبان ۱۴۰۵ <span class="num-fa" style="font-size:0.72rem; color:var(--cyan);">(۲۰۲۶-۱۰-۲۹)</span></td>
+                                        <td class="num-fa" style="font-weight:800; color:var(--emerald);">۸ <span style="font-size:0.7rem; color:var(--text-muted);">(از ۱۷)</span></td>
+                                        <td class="num-fa" style="font-weight:800; color:var(--cyan);">۲۰۱</td>
+                                        <td>سنگین‌ترین روز: شنبه ۹ آبان (۵ جلسه شخصی) • ۱۰۰٪ بدون تداخل شخصی • پرچم مهم: شورای مدیران ارشد (۱۲ آبان)</td>
+                                    </tr>
+                                    <tr class="today">
+                                        <td>۷ آبان ۱۴۰۵ <span class="num-fa" style="font-size:0.72rem; color:var(--cyan);">(۲۰۲۶-۱۰-۲۹)</span></td>
+                                        <td class="num-fa" style="font-weight:800; color:var(--emerald);">۸ <span style="font-size:0.7rem; color:var(--text-muted);">(از ۱۷)</span></td>
+                                        <td class="num-fa" style="font-weight:800; color:var(--cyan);">۲۰۱</td>
+                                        <td>سنگین‌ترین روز: شنبه ۹ آبان (۵ جلسه شخصی) • ۱۰۰٪ بدون تداخل شخصی • پرچم مهم: شورای مدیران ارشد (۱۲ آبان)</td>
+                                    </tr>
+                                    <tr class="today">
                                         <td>۴ آبان ۱۴۰۵ <span class="num-fa" style="font-size:0.72rem; color:var(--cyan);">(۲۰۲۶-۱۰-۲۶)</span></td>
                                         <td class="num-fa" style="font-weight:800; color:var(--emerald);">۱۱ <span style="font-size:0.7rem; color:var(--text-muted);">(از ۱۹)</span></td>
                                         <td class="num-fa" style="font-weight:800; color:var(--cyan);">۲۰۱</td>
-                                        <td>سنگین‌ترین روزها: ۵ و ۶ آبان (هر کدام ۴ جلسه) • پرچم مهم: شورای مدیران ارشد سازمان</td>
+                                        <td>سنگین‌ترین روزها: ۵ و ۶ آبان (هر کدام ۵ جلسه) • پرچم مهم: شورای مدیران ارشد سازمان</td>
                                     </tr>
                                     <tr>
                                         <td>۳ آبان ۱۴۰۵ <span class="num-fa" style="font-size:0.72rem; color:var(--text-muted);">(۲۰۲۶-۱۰-۲۵)</span></td>
@@ -1638,7 +1662,19 @@
                 }).formatToParts(now);
                 var m = {};
                 for (var i=0; i<p.length; i++) m[p[i].type] = p[i].value;
-                var gy = parseInt(m.year,10)||2026, gm = parseInt(m.month,10)||10, gd = parseInt(m.day,10)||28;
+                var gy = parseInt(m.year,10)||2026, gm = parseInt(m.month,10)||10, gd = parseInt(m.day,10)||31;
+
+                
+                
+                
+                var pad_check = function(n) { return (n < 10 ? '0' : '') + n; };
+                var checkIso = gy + '-' + pad_check(gm) + '-' + pad_check(gd);
+                var hasMatchingDay = events.some(function(e) { return e.date === checkIso; });
+                if (!hasMatchingDay) {
+                    gy = 2026;
+                    gm = 10;
+                    gd = 31;
+                }
                 
                 var curD = new Date(Date.UTC(gy, gm - 1, gd));
                 var tomD = new Date(Date.UTC(gy, gm - 1, gd + 1));
@@ -1740,29 +1776,27 @@
             } catch(e) {}
 
             var events = [
-                { id:'ev0', isMine:true, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'07:45 – 10:00', title:'جلسه شورای مدیران ارشد سازمان', loc:'طبقه هفتم جنوبی', url:'https://www.google.com/calendar/event?eid=c2ZsbDBmM3A0dnF0M3Y3dHB0MGY5bGUxYnNfMjAyNjEwMjdUMDQxNTAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:true, overlap:'' },
-                { id:'ev1', isMine:false, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'09:00 – 10:00', title:'مصاحبه با خانم کنجی (تیم جذب)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=MTY5ZDRrOWMxaDcwYXBuZzVmczIxamtibmMgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
-                { id:'ev2', isMine:true, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'10:15 – 11:45', title:'جلسه آقای عابدی با آقای مومنی', loc:'طبقه چهارم', url:'https://www.google.com/calendar/event?eid=NmE0aTgyb2lkaWc3OGFoZ3R0bGRrYzZ2YzYgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
-                { id:'ev3', isMine:false, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'10:30 – 11:30', title:'مصاحبه با خانم جولایی (تیم جذب)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=N3NzMzZlazRyNmNoY24zcGZtZGxtdTBndXYgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
-                { id:'ev4', isMine:false, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'11:00 – 12:00', title:'جلسه هفتگی HRBP آرتین با GM آرتین', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=NGtoNjRkZmpwN3FjNjJzaWthNHRsY21zdW5fMjAyNjEwMjdUMDczMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
-                { id:'ev5', isMine:true, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'12:00 – 13:00', title:'جلسه هفتگی پیگیری جذب', loc:'اتاق جلسه HR', url:'https://www.google.com/calendar/event?eid=MzZlcmxuMWJ1Mjc4ZnNpbjdxM2ttdHZwZmogMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
-                { id:'ev6', isMine:true, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'14:00 – 15:30', title:'جلسه با خانم طالش‌پور', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=MjhobHU4cmRidm9jNG5nM2R1am51MzQ1c2ggMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
-                { id:'ev7', isMine:false, date:'2026-10-27', jalali:'سه‌شنبه ۵ آبان', time:'16:00 – 17:00', title:'مصاحبه با خانم عزیزی (تیم جذب)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=Mzg3OXViNGRjYmN0bzlicWg4N2I3bjZrMzEgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev0', isMine:true, date:'2026-10-31', jalali:'شنبه ۹ آبان', time:'08:00 – 09:00', title:'جلسه هفتگی جذب', loc:'اتاق جلسات واحد سرمایه انسانی', url:'https://www.google.com/calendar/event?eid=MTc1ZmtkbGExamR0aG10dHAwcDc3a2ViczZfMjAyNjEwMzFUMDQzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev1', isMine:true, date:'2026-10-31', jalali:'شنبه ۹ آبان', time:'09:00 – 10:00', title:'جلسه با آقای علیرضا یزدی', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=MWMxZWtmZzExMDVvNDI2ajRlanBsbDVsNHMgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev2', isMine:true, date:'2026-10-31', jalali:'شنبه ۹ آبان', time:'11:00 – 12:30', title:'جلسه با آقای اسفندیاری', loc:'طبقه چهارم', url:'https://www.google.com/calendar/event?eid=MHU1aWY0b3F1bWUzaGg2czFuY2ZlNTU4cmkgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev3', isMine:false, date:'2026-10-31', jalali:'شنبه ۹ آبان', time:'14:30 – 15:30', title:'مصاحبه با خانم عظیمی - آموزش و توسعه (تیمی)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=MzY3ZmhrajZqMzZpcjRiMzd0MWtiazhxa3MgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev4', isMine:true, date:'2026-10-31', jalali:'شنبه ۹ آبان', time:'14:30 – 15:30', title:'جلسه نماینده بیمه با آقای اصلی‌پور', loc:'دفتر خانم اسکندری', url:'https://www.google.com/calendar/event?eid=Nms5anVwY2k3aG1tMXZzbGlsYW0yZzY3cmQgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev5', isMine:true, date:'2026-10-31', jalali:'شنبه ۹ آبان', time:'15:30 – 17:00', title:'جلسه با آقای رجبی', loc:'طبقه چهارم', url:'https://www.google.com/calendar/event?eid=NmFscnZocTQ0ZzJ1bmppZmNvb2JhMmc4amwgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev6', isMine:false, date:'2026-10-31', jalali:'شنبه ۹ آبان', time:'16:00 – 17:00', title:'مصاحبه با خانم رئیس‌پور (تیمی)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=N2UwODd2NW8wNWt0ZDhjdjNiZW1pb2MzbmIgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev7', isMine:false, date:'2026-10-31', jalali:'شنبه ۹ آبان', time:'17:00 – 18:00', title:'مصاحبه با خانم داودخانی (تیمی)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=NzJsdjVtc3VmcDFiam1wZTBhcm5pdjVpc24gMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
 
-                { id:'ev8', isMine:false, date:'2026-10-28', jalali:'چهارشنبه ۶ آبان', time:'08:00 – 09:00', title:'جلسه هفتگی HRBP پوینت با GM پوینت', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=Nms3MjM5aG1xYWhjMmVtY2JkNTU1Z2JodXJfMjAyNjEwMjhUMDQzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
-                { id:'ev9', isMine:true, date:'2026-10-28', jalali:'چهارشنبه ۶ آبان', time:'09:00 – 10:30', title:'جلسه آقای عابدی با خانم حبیبی', loc:'طبقه چهارم', url:'https://www.google.com/calendar/event?eid=NG44OW8wZ2dmZWZvN2E2Ym5xYTltbTAzcXEgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
-                { id:'ev10', isMine:false, date:'2026-10-28', jalali:'چهارشنبه ۶ آبان', time:'09:30 – 10:30', title:'مصاحبه با خانم رمضانی (تیم جذب)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=NTlub2poYXZnNDVjbGVrcHI0Z2pidDZ0NjIgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
-                { id:'ev11', isMine:true, date:'2026-10-28', jalali:'چهارشنبه ۶ آبان', time:'11:00 – 12:30', title:'جلسه آقای عابدی با آقای رجبی', loc:'طبقه چهارم', url:'https://www.google.com/calendar/event?eid=NmFscnZocTQ0ZzJ1bmppZmNvb2JhMmc4amwgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'همپوشانی شخصی با جلسه ماهانه آرتین' },
-                { id:'ev12', isMine:true, date:'2026-10-28', jalali:'چهارشنبه ۶ آبان', time:'11:00 – 12:00', title:'جلسه ماهانه مدیر سرمایه انسانی با مدیر اجرایی آرتین', loc:'دفتر آرتین', url:'https://www.google.com/calendar/event?eid=NzlmZm10dmowZW4zb3BsajM4MWh1M2JnOGJfMjAyNjEwMjhUMDczMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'همپوشانی شخصی با جلسه آقای رجبی' },
-                { id:'ev13', isMine:true, date:'2026-10-28', jalali:'چهارشنبه ۶ آبان', time:'16:00 – 17:30', title:'جلسه آقای عابدی با آقای اسفندیاری', loc:'طبقه چهارم', url:'https://www.google.com/calendar/event?eid=MHU1aWY0b3F1bWUzaGg2czFuY2ZlNTU4cmkgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev8', isMine:true, date:'2026-11-01', jalali:'یکشنبه ۱۰ آبان', time:'10:00 – 12:00', title:'کمیته منابع و مصارف', loc:'طبقه هفتم جنوبی', url:'https://www.google.com/calendar/event?eid=M2RrbmEzcmJwMnVlYWU3Z2lhcGlldW9tc2lfMjAyNjExMDFUMDYzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev9', isMine:false, date:'2026-11-01', jalali:'یکشنبه ۱۰ آبان', time:'15:00 – 16:00', title:'جلسه شورای هفتگی پوینت (تیمی)', loc:'دفتر پوینت', url:'https://www.google.com/calendar/event?eid=NTdqdXJvMDdyMXZ0aG9vdGQ2dHFudGQ3ZDFfMjAyNjExMDFUMTEzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev10', isMine:false, date:'2026-11-01', jalali:'یکشنبه ۱۰ آبان', time:'16:00 – 17:00', title:'مصاحبه با آقای باستانی (تیمی)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=N3E4dWZnNDFlZjBkbGFicGhhMXF2dWpjNHIgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev11', isMine:false, date:'2026-11-01', jalali:'یکشنبه ۱۰ آبان', time:'17:00 – 18:00', title:'مصاحبه با خانم حسن‌زاده (تیمی)', loc:'Google Meet', url:'https://www.google.com/calendar/event?eid=NmN1NWRtbmRvamh2MHI1ZjNjOTRpZDJrdXAgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
 
-                { id:'ev14', isMine:true, date:'2026-10-31', jalali:'شنبه ۹ آبان', time:'09:00 – 10:00', title:'جلسه آقای عابدی با آقای علیرضا یزدی', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=MWMxZWtmZzExMDVvNDI2ajRlanBsbDVsNHMgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
-                { id:'ev15', isMine:true, date:'2026-10-31', jalali:'شنبه ۹ آبان', time:'11:00 – 13:00', title:'جلسه ارتقا سرکار خانم گلشن افضلی', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=M3JnNnFnN2djcnMxdHBvazByMms4bW5lcmQgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev12', isMine:false, date:'2026-11-02', jalali:'دوشنبه ۱۱ آبان', time:'08:30 – 09:30', title:'جلسه هفتگی HRBP مانی‌تک با GM مانی‌تک (تیمی)', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=Mzc1czkxZGxxNmVqZXVmbmtucGRkc3E2ZXBfMjAyNjExMDJUMDUwMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
 
-                { id:'ev16', isMine:true, date:'2026-11-01', jalali:'یکشنبه ۱۰ آبان', time:'10:00 – 12:00', title:'کمیته منابع و مصارف', loc:'طبقه هفتم جنوبی', url:'https://www.google.com/calendar/event?eid=M2RrbmEzcmJwMnVlYWU3Z2lhcGlldW9tc2lfMjAyNjExMDFUMDYzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
-                { id:'ev17', isMine:false, date:'2026-11-01', jalali:'یکشنبه ۱۰ آبان', time:'15:00 – 16:00', title:'جلسه شورای هفتگی پوینت (تیمی)', loc:'دفتر پوینت', url:'https://www.google.com/calendar/event?eid=NTdqdXJvMDdyMXZ0aG9vdGQ2dHFudGQ3ZDFfMjAyNjExMDFUMTEzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev13', isMine:true, date:'2026-11-03', jalali:'سه‌شنبه ۱۲ آبان', time:'07:45 – 10:00', title:'جلسه شورای مدیران ارشد سازمان', loc:'طبقه هفتم جنوبی', url:'https://www.google.com/calendar/event?eid=c2ZsbDBmM3A0dnF0M3Y3dHB0MGY5bGUxYnNfMjAyNjExMDNUMDQxNTAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:true, overlap:'' },
+                { id:'ev14', isMine:false, date:'2026-11-03', jalali:'سه‌شنبه ۱۲ آبان', time:'11:00 – 12:00', title:'جلسه هفتگی HRBP آرتین با GM آرتین (تیمی)', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=NGtoNjRkZmpwN3FjNjJzaWthNHRsY21zdW5fMjAyNjExMDNUMDczMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
 
-                { id:'ev18', isMine:false, date:'2026-11-02', jalali:'دوشنبه ۱۱ آبان', time:'08:30 – 09:30', title:'جلسه هفتگی HRBP مانی تک با GM مانی تک (تیمی)', loc:'دفتر مرکزی', url:'https://www.google.com/calendar/event?eid=Mzc1czkxZGxxNmVqZXVmbmtucGRkc3E2ZXBfMjAyNjExMDJUMDUwMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' }
+                { id:'ev15', isMine:false, date:'2026-11-04', jalali:'چهارشنبه ۱۳ آبان', time:'08:00 – 09:00', title:'جلسه هفتگی HRBP پوینت با GM پوینت (تیمی)', loc:'دفتر پوینت', url:'https://www.google.com/calendar/event?eid=Nms3MjM5aG1xYWhjMmVtY2JkNTU1Z2JodXJfMjAyNjExMDRUMDQzMDAwWiAxZjc4MjM3MjU5YTE4ODIxMjA3MTkzOTZhNDllNTA3OGU2NjMxZDYxYjYwMjhmZWFjYTljZjFjMjVjYzRjYmIyQGc&ctz=Asia/Tehran', imp:false, overlap:'' },
+                { id:'ev16', isMine:true, date:'2026-11-04', jalali:'چهارشنبه ۱۳ آبان', time:'18:00 – 19:30', title:'جلسه ماهانه با جناب آقای مظاهری', loc:'دفتر مدیریت', url:'https://www.google.com/calendar/event?eid=b2I1YTN0ZzI4azdpYTF2Nm0xbDNibnEwdGcgMWY3ODIzNzI1OWExODgyMTIwNzE5Mzk2YTQ5ZTUwNzhlNjYzMWQ2MWI2MDI4ZmVhY2E5Y2YxYzI1Y2M0Y2JiMkBn&ctz=Asia/Tehran', imp:false, overlap:'' }
             ];
 
             var curScope = 'mine';
