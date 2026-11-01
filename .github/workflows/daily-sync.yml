@@ -1,59 +1,113 @@
+
 name: Daily Radar Auto-Sync
 
 on:
   schedule:
-    # اجرا در ساعت‌های ۱۰:۱۵ و ۱۷:۱۵ به وقت تهران (۰۶:۴۵ و ۱۳:۴۵ UTC)
     - cron: '45 6,13 * * *'
-  workflow_dispatch: # امکان اجرای دستی با یک کلیک در گیت‌هاب
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-sync
+  cancel-in-progress: false
 
 jobs:
   update-radar:
     runs-on: ubuntu-latest
-    steps:
-      - name: بررسی مخزن
-        uses: actions/checkout@v4
 
-      - name: تنظیم پایتون
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: نصب کتابخانه‌ها
-        run: pip install requests
-
-      - name: همگام‌سازی و نوسازی رادار
+      - name: Sync approved Radar metrics
+        env:
+          RADAR_CSV_URL: ${{ secrets.RADAR_CSV_URL }}
         run: |
-          python -c "
-          import urllib.request, re, datetime
+          python - <<'PY'
+          import csv
+          import io
+          import json
+          import os
+          import urllib.request
+          from datetime import datetime, timezone
+          from pathlib import Path
 
-          # دریافت آخرین اطلاعات از گوگل شیت رادار
-          sheet_url = 'https://docs.google.com/spreadsheets/d/1v11EjqM8dEOhtijdIrlBMmpWnbo81xQNQR-sCokxMqM/export?format=csv'
-          try:
-              req = urllib.request.Request(sheet_url, headers={'User-Agent': 'Mozilla/5.0'})
-              with urllib.request.urlopen(req) as resp:
-                  csv_data = resp.read().decode('utf-8')
-              print('Google Sheet data fetched successfully.')
-          except Exception as e:
-              print('Notice: Using cache / direct update:', e)
+          url = os.environ.get("RADAR_CSV_URL")
+          if not url:
+              raise RuntimeError("Missing RADAR_CSV_URL secret")
 
-          # به‌روزرسانی برچسب زمان ساخت در فایل
-          now_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')
-          with open('index.html', 'r', encoding='utf-8') as f:
-              content = f.read()
+          req = urllib.request.Request(
+              url,
+              headers={"User-Agent": "Radar-Sync/1.0"}
+          )
 
-          # ثبت متادیتای آخرین بازسازی
-          if '<!-- Last Auto-Sync:' in content:
-              content = re.sub(r'<!-- Last Auto-Sync:.*?-->', f'<!-- Last Auto-Sync: {now_str} -->', content)
-          else:
-              content = content.replace('</body>', f'<!-- Last Auto-Sync: {now_str} -->\n</body>')
+          with urllib.request.urlopen(req, timeout=30) as response:
+              csv_text = response.read().decode("utf-8-sig")
 
-          with open('index.html', 'w', encoding='utf-8') as f:
-              f.write(content)
-          "
+          rows = list(csv.reader(io.StringIO(csv_text)))
 
-      - name: ثبت و ارسال تغییرات به گیت‌هاب
+          # Only approved, non-sensitive summary metrics
+          allowed = {
+              "تعداد جلسات ۷ روز آینده": "weeklyMeetings",
+              "چرخه ارزیابی عملکرد (از ۵ دپارتمان)": "performanceCycle",
+          }
+
+          metrics = {}
+
+          for row in rows:
+              if len(row) < 2:
+                  continue
+
+              key = row[0].strip()
+              value = row[1].strip()
+
+              if key in allowed and value:
+                  metrics[allowed[key]] = value
+
+          if len(metrics) != len(allowed):
+              missing = set(allowed.values()) - set(metrics)
+              raise RuntimeError(
+                  f"Missing required metrics: {sorted(missing)}"
+              )
+
+          output = {
+              "lastSync": datetime.now(
+                  timezone.utc
+              ).isoformat(),
+              "metrics": metrics
+          }
+
+          Path("radar-data.json").write_text(
+              json.dumps(
+                  output,
+                  ensure_ascii=False,
+                  indent=2
+              ) + "\n",
+              encoding="utf-8"
+          )
+
+          print("Radar metrics synced successfully")
+          PY
+
+      - name: Commit updated data
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add index.html
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: automated radar daily sync" && git push)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add radar-data.json
+
+          if ! git diff --cached --quiet; then
+            git commit -m "data: sync Radar metrics"
+            git push
+          else
+            echo "No changes to commit"
+          fi
